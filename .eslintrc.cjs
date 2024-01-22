@@ -24,6 +24,9 @@ const config = {
   plugins: ['react-refresh', 'simple-import-sort', 'import'],
   rules: {
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-return': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
@@ -67,7 +70,7 @@ const config = {
             '^\\.\\./.+$', // Parents
             '^\\./[^/]+$', // Siblings
             '^\\./.+$', // Children
-            '^src/.+$', // Internal
+            '^src/.+?(?!=\\.s?css)', // Internal
             '^', // Everything else
             '^react$', // react
             '^react/.+$', // react/*
