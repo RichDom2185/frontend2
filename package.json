@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@blueprintjs/core": "^5.8.2",
+    "@reduxjs/toolkit": "^2.0.1",
     "ace-builds": "^1.32.3",
     "browserfs": "^1.4.3",
     "classnames": "^2.5.1",

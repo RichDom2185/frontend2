@@ -45,6 +45,13 @@ const config = {
               'Do not use relative imports for CSS/SCSS files. Use absolute imports instead.',
           },
         ],
+        paths: [
+          {
+            name: 'react-redux',
+            importNames: ['useSelector', 'useDispatch'],
+            message: "Use the typed hooks 'useAppDispatch' and 'useAppSelector' instead.",
+          },
+        ],
       },
     ],
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
