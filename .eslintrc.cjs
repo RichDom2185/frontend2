@@ -1,4 +1,6 @@
-module.exports = {
+// @ts-check
+/** @type {import('eslint').Linter.Config} */
+const config = {
   root: true,
   env: { browser: true, es2020: true },
   extends: [
@@ -6,12 +8,58 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:react-hooks/recommended',
     'plugin:react/recommended',
-    'plugin:react/jsx-runtime'
+    'plugin:react/jsx-runtime',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
+  parserOptions: {
+    ecmaFeatures: { jsx: true },
+    ecmaVersion: 2020,
+    project: './tsconfig.json',
+    sourceType: 'module',
+  },
+  settings: {
+    react: { version: 'detect' },
+  },
+  plugins: ['react-refresh', 'simple-import-sort', 'import'],
   rules: {
-    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }]
-  }
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        vars: 'all',
+        args: 'all',
+        ignoreRestSiblings: false,
+        varsIgnorePattern: '^_',
+        argsIgnorePattern: '^_',
+      },
+    ],
+    'import/no-useless-path-segments': ['error', { noUselessIndex: true }],
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          [
+            '^\\u0000', // Side effects
+          ],
+          // Separate by empty line
+          [
+            '^\\.\\./.+$', // Parents
+            '^\\./[^/]+$', // Siblings
+            '^\\./.+$', // Children
+            '^', // Everything else
+            '^react$', // react
+            '^react-dom$', // react-dom
+          ],
+          // Separate by empty line
+          [
+            '^.*\\.module\\.s?css$', // CSS Modules
+            '^.+\\.s?css$', // CSS, SCSS
+          ],
+        ],
+      },
+    ],
+  },
 };
+
+module.exports = config;
