@@ -1,5 +1,10 @@
 # Playground
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Setting up
+
+Requirements:
+
+- Node.js: Check the `.tool-versions` file for the required version
+
+1. Copy `.env.local.example` to `.env.local` and fill in the values
+1. Run `yarn dev` to start the development server
