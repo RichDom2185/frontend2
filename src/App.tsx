@@ -5,7 +5,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import React from 'react';
 
 import classes from 'src/styles/app.module.scss';
-import '@blueprintjs/core/lib/css/blueprint.css';
 
 const router = createBrowserRouter(routes);
 
