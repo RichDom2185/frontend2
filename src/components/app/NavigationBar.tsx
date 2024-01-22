@@ -1,8 +1,9 @@
-import classes from '../../styles/NavigationBar.module.scss';
 import { Alignment, AnchorButton, Button, Navbar } from '@blueprintjs/core';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
 import React from 'react';
+
+import classes from 'src/styles/NavigationBar.module.scss';
 
 const NavigationBar: React.FC = () => {
   return (

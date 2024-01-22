@@ -34,6 +34,18 @@ const config = {
       },
     ],
     'import/no-useless-path-segments': ['error', { noUselessIndex: true }],
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: [
+          {
+            group: ['../**/*.scss', '../**/*.css', './**/*.scss', './**/*.css'],
+            message:
+              'Do not use relative imports for CSS/SCSS files. Use absolute imports instead.',
+          },
+        ],
+      },
+    ],
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     'simple-import-sort/imports': [
       'error',
@@ -49,7 +61,9 @@ const config = {
             '^\\./.+$', // Children
             '^', // Everything else
             '^react$', // react
+            '^react/.+$', // react/*
             '^react-dom$', // react-dom
+            '^react-dom/.+$', // react-dom/*
           ],
           // Separate by empty line
           [
