@@ -4,14 +4,36 @@ import 'ace-builds/src-noconflict/mode-javascript';
 import 'ace-builds/src-noconflict/theme-tomorrow_night_eighties';
 
 import AceEditor from 'react-ace';
-import React from 'react';
+import React, { useImperativeHandle, useRef, useState } from 'react';
 
-const Editor: React.FC = () => {
+export type ImperativeEditor = {
+  getCode: () => string;
+};
+
+const EditorComponent: React.ForwardRefRenderFunction<ImperativeEditor> = (_, editorRef) => {
+  const [code, setCode] = useState('');
+  const ref = useRef<AceEditor>(null);
+
+  useImperativeHandle<ImperativeEditor, ImperativeEditor>(editorRef, () => ({
+    getCode: () => ref.current?.editor?.getValue() ?? '',
+  }));
+
   return (
     <div style={{ display: 'flex', width: '100%', height: '100%' }}>
-      <AceEditor mode="javascript" theme="tomorrow_night_eighties" width="100%" height="100%" />
+      <AceEditor
+        ref={ref}
+        mode="javascript"
+        theme="tomorrow_night_eighties"
+        width="100%"
+        height="100%"
+        value={code}
+        onChange={setCode}
+      />
     </div>
   );
 };
+
+const Editor = React.forwardRef(EditorComponent);
+Editor.displayName = 'Editor';
 
 export default Editor;
