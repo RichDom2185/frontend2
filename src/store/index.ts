@@ -1,3 +1,4 @@
+import { mocksActions } from './mocks';
 import { rootReducer } from './rootReducer';
 import { sicpActions } from './sicp';
 import { workspacesActions } from './workspaces';
@@ -11,6 +12,7 @@ export const store = configureStore({
 });
 
 export const actions = {
+  ...mocksActions,
   ...sicpActions,
   ...workspacesActions,
 };
