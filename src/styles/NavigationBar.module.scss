@@ -1,3 +1,9 @@
+@import "src/styles/variables.scss";
+
+.primary-navbar {
+  background-color: $dark-gray1 !important;
+}
+
 .navlink {
   font-weight: bold;
 }

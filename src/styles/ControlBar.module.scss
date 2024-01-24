@@ -1,8 +1,16 @@
+@import "src/styles/variables.scss";
+
 .control-bar {
+  border-top: 1px solid $dark-gray4;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: #1a2530;
+  background-color: $dark-gray1;
   padding-inline: 12px;
+  column-gap: 6px;
+
+  button {
+    font-weight: 600;
+  }
 }

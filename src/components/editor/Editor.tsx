@@ -1,7 +1,7 @@
 import 'ace-builds/src-noconflict/ace';
 import 'ace-builds/src-noconflict/ext-language_tools';
 import 'ace-builds/src-noconflict/mode-javascript';
-import 'ace-builds/src-noconflict/theme-tomorrow_night_eighties';
+import 'ace-builds/src-noconflict/theme-twilight';
 
 import AceEditor from 'react-ace';
 import React, { useImperativeHandle, useRef, useState } from 'react';
@@ -23,7 +23,8 @@ const EditorComponent: React.ForwardRefRenderFunction<ImperativeEditor> = (_, ed
       <AceEditor
         ref={ref}
         mode="javascript"
-        theme="tomorrow_night_eighties"
+        theme="twilight"
+        fontSize={14}
         width="100%"
         height="100%"
         value={code}
