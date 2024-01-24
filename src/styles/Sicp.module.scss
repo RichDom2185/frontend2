@@ -1,0 +1,74 @@
+.sicp-container {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.sicp-body {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 1rem;
+}
+
+.sicp-index-page {
+  margin-block: 1rem;
+
+  > * + * {
+    margin-top: 1rem;
+  }
+}
+
+.sicp-licenses {
+  margin-inline: auto;
+  max-width: 600px;
+  text-align: center;
+  border-collapse: collapse;
+
+  img {
+    height: 1.75rem;
+    margin-bottom: -0.125rem; // CSS Inline trick
+  }
+
+  td {
+    padding: 6px 12px;
+    border: 1px solid black;
+  }
+}
+
+.sicp-cover {
+  display: flex;
+  column-gap: 32px;
+  justify-content: space-evenly;
+
+  img {
+    object-fit: contain;
+  }
+
+  @media only screen and (max-width: 768px) {
+    row-gap: 24px;
+    flex-direction: column;
+
+    img {
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.sicp-cover-text {
+  flex-shrink: 1;
+  display: flex;
+  row-gap: 24px;
+  justify-content: space-between;
+  flex-flow: column nowrap;
+  text-align: right;
+
+  @media only screen and (max-width: 768px) {
+    text-align: left;
+  }
+}
+
+.sicp-authors {
+  h5 {
+    font-weight: 300;
+  }
+}

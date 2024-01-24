@@ -6,7 +6,10 @@ import React from 'react';
 
 import classes from 'src/styles/NavigationBar.module.scss';
 
-const navbarRoutes = [{ path: '/playground', name: 'Playground', icon: 'code' }] as const;
+const navbarRoutes = [
+  { path: '/playground', name: 'Playground', icon: 'code' },
+  { path: '/sicp', name: 'SICP', icon: 'book' },
+] as const;
 
 const NavigationBar: React.FC = () => {
   return (
