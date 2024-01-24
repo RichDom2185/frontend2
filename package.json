@@ -16,6 +16,7 @@
     "axios": "^1.6.5",
     "browserfs": "^1.4.3",
     "classnames": "^2.5.1",
+    "js-slang": "^1.0.37",
     "lodash.clonedeep": "^4.5.0",
     "react": "^18.2.0",
     "react-ace": "^10.1.0",
@@ -40,5 +41,8 @@
     "sass": "^1.70.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
+  },
+  "resolutions": {
+    "**/gl": "^6.0.0"
   }
 }
