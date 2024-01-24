@@ -1,4 +1,5 @@
 import { rootReducer } from './rootReducer';
+import { sicpActions } from './sicp';
 import { workspacesActions } from './workspaces';
 import { configureStore } from '@reduxjs/toolkit';
 
@@ -10,6 +11,7 @@ export const store = configureStore({
 });
 
 export const actions = {
+  ...sicpActions,
   ...workspacesActions,
 };
 
