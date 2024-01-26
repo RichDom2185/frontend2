@@ -1,3 +1,4 @@
+import { fileSystemActions } from './fileSystem';
 import { mocksActions } from './mocks';
 import { rootReducer } from './rootReducer';
 import { sicpActions } from './sicp';
@@ -12,10 +13,12 @@ export const store = configureStore({
 });
 
 export const actions = {
+  ...fileSystemActions,
   ...mocksActions,
   ...sicpActions,
   ...workspacesActions,
 };
 
+export type Store = typeof store;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
