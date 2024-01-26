@@ -9,6 +9,8 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
+      fs: 'browserfs',
+      path: 'path-browserify',
       src: '/src',
     },
   },
