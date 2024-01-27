@@ -1,5 +1,5 @@
 import react from '@vitejs/plugin-react';
-import sass from 'sass';
+import * as sass from 'sass';
 import { defineConfig } from 'vite';
 
 const ignoreSvgIcon = () => new sass.SassString('');
