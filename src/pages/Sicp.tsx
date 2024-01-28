@@ -8,22 +8,27 @@ import { useResponsive } from 'src/utils/hooks';
 import { parseArr } from 'src/utils/sicp';
 import { Classes, Drawer, Position } from '@blueprintjs/core';
 import classNames from 'classnames';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import React, { useEffect, useRef, useState } from 'react';
 
 import classes from 'src/styles/sicp.module.scss';
 
 const Sicp: React.FC = () => {
   const { chapter } = useParams<{ chapter: string }>();
-  const refs = useRef({});
+  const refs = useRef<Record<string, HTMLElement | null>>({});
   const { isMobileBreakpoint } = useResponsive();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     if (chapter === undefined) {
       return;
     }
   }, [chapter]);
+
+  useEffect(() => {
+    refs.current[location.hash]?.scrollIntoView({ behavior: 'smooth' });
+  }, [location.hash]);
 
   const drawer = (closeFn: () => void) => (
     <Drawer
