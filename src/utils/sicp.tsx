@@ -1,11 +1,11 @@
 import Constants from './constants';
+import SicpCodeSnippet from 'src/components/sicp/SicpCodeSnippet';
+import SicpExercise from 'src/components/sicp/SicpExercise';
+import SicpLatex from 'src/components/sicp/SicpLatex';
 import { Blockquote, Code, H1, H2, H4, Icon, OL, Pre, UL } from '@blueprintjs/core';
 import { IconNames } from '@blueprintjs/icons';
 import { Link } from 'react-router-dom';
 import React from 'react';
-
-// FIXME: Remove eslint-disable
-/* eslint-disable */
 
 // Custom error class for errors when parsing JSON files.
 export class ParseJsonError extends Error {}
@@ -69,11 +69,11 @@ const AnchorLink: React.FC<AnchorLinkType> = props => {
 const handleFootnote = (obj: JsonType, refs: RefType) => {
   return (
     <>
-      {obj['count'] === 1 && <hr />}
+      {obj.count === 1 && <hr />}
       <div className="sicp-footnote">
-        <div ref={ref => (refs.current[obj['id']!] = ref)} />
-        <a href={obj['href']}>{'[' + obj['count'] + '] '}</a>
-        {parseArr(obj['child']!, refs)}
+        <div ref={ref => (refs.current[obj.id!] = ref)} />
+        <a href={obj.href}>{'[' + obj.count + '] '}</a>
+        {parseArr(obj.child!, refs)}
       </div>
     </>
   );
@@ -81,8 +81,8 @@ const handleFootnote = (obj: JsonType, refs: RefType) => {
 
 const handleRef = (obj: JsonType, refs: RefType) => {
   return (
-    <Link ref={ref => (refs.current[obj['id']!] = ref)} to={obj['href']!}>
-      {obj['body']}
+    <Link ref={ref => (refs.current[obj.id!] = ref)} to={obj.href!}>
+      {obj.body}
     </Link>
   );
 };
@@ -120,47 +120,45 @@ const handleEpigraph = (obj: JsonType, refs: RefType) => {
 };
 
 const handleSnippet = (obj: JsonType) => {
-  if (obj['latex']) {
-    return <Pre>{handleLatex(obj['body']!)}</Pre>;
-  } else if (typeof obj['eval'] === 'boolean' && !obj['eval']) {
+  if (obj.latex) {
+    return <Pre>{handleLatex(obj.body!)}</Pre>;
+  } else if (typeof obj.eval === 'boolean' && !obj.eval) {
     return (
       <>
-        {obj['body'] && <Pre>{obj['body']}</Pre>}
-        {obj['output'] && (
+        {obj.body && <Pre>{obj.body}</Pre>}
+        {obj.output && (
           <Pre>
-            <em>{obj['output']}</em>
+            <em>{obj.output}</em>
           </Pre>
         )}
       </>
     );
   } else {
-    if (!obj['body']) {
+    if (!obj.body) {
       return <></>;
     }
 
-    const CodeSnippetProps = {
-      body: obj['body'],
-      id: obj['id']!,
-      initialEditorValueHash: obj['program']!,
-      prependLength: obj['prependLength']!,
-      output: obj['output']!,
+    const codeSnippetProps = {
+      body: obj.body,
+      id: obj.id!,
+      initialEditorValueHash: obj.program!,
+      prependLength: obj.prependLength!,
+      output: obj.output!,
     };
-    // return <CodeSnippet {...CodeSnippetProps} />;
-    // FIXME: CodeSnippet is not defined
-    return <></>;
+    return <SicpCodeSnippet {...codeSnippetProps} />;
   }
 };
 
 const handleFigure = (obj: JsonType, refs: RefType) => (
-  <AnchorLink id={obj['id']} refs={refs} top={36}>
+  <AnchorLink id={obj.id} refs={refs} top={36}>
     <div className="sicp-figure">
-      {obj['src'] && handleImage(obj, refs)}
-      {obj['snippet'] && processingFunctions['SNIPPET'](obj['snippet'], refs)}
-      {obj['table'] && processingFunctions['TABLE'](obj['table'], refs)}
-      {obj['captionName'] && (
+      {obj.src && handleImage(obj, refs)}
+      {obj.snippet && processingFunctions['SNIPPET'](obj.snippet, refs)}
+      {obj.table && processingFunctions['TABLE'](obj.table, refs)}
+      {obj.captionName && (
         <h5 className="sicp-caption">
-          {obj['captionName']}
-          {parseArr(obj['captionBody']!, refs)}
+          {obj.captionName}
+          {parseArr(obj.captionBody!, refs)}
         </h5>
       )}
     </div>
@@ -168,35 +166,30 @@ const handleFigure = (obj: JsonType, refs: RefType) => (
 );
 
 const handleImage = (obj: JsonType, _refs: RefType) => {
-  return (
-    <img src={Constants.sicpBackendUrl + obj.src} alt={obj.id} width={obj['scale'] || '100%'} />
-  );
+  return <img src={Constants.sicpBackendUrl + obj.src} alt={obj.id} width={obj.scale || '100%'} />;
 };
 
 const handleTR = (obj: JsonType, refs: RefType, index: number) => {
-  return <tr key={index}>{obj['child']!.map((x, index) => handleTD(x, refs, index))}</tr>;
+  return <tr key={index}>{obj.child!.map((x, index) => handleTD(x, refs, index))}</tr>;
 };
 
 const handleTD = (obj: JsonType, refs: RefType, index: number) => {
-  return <td key={index}>{parseArr(obj['child']!, refs)}</td>;
+  return <td key={index}>{parseArr(obj.child!, refs)}</td>;
 };
 
 const handleExercise = (obj: JsonType, refs: RefType) => {
   return (
     <AnchorLink id={obj.id} refs={refs} top={5}>
-      {/* FIXME: SicpExercise is not defined */}
-      SicpExercise
-      {/* <SicpExercise
-        title={obj['title']!}
-        body={parseArr(obj['child']!, refs)}
-        solution={obj['solution'] && parseArr(obj['solution'], refs)}
-      /> */}
+      <SicpExercise
+        title={obj.title!}
+        body={parseArr(obj.child!, refs)}
+        solution={obj.solution && parseArr(obj.solution, refs)}
+      />
     </AnchorLink>
   );
 };
 
 const handleTitle = (obj: JsonType, refs: RefType) => {
-  console.log(obj.body);
   return (
     <AnchorLink id={obj.id} refs={refs} top={6}>
       <H1>{obj.body}</H1>
@@ -213,21 +206,19 @@ const handleText = (text: string) => {
 };
 
 const handleLatex = (math: string) => {
-  // FIXME: SicpLatex is not defined
-  // return <SicpLatex math={math} />;
-  return <></>;
+  return <SicpLatex math={math} />;
 };
 
 export const processingFunctions: Record<string, (obj: JsonType, refs: RefType) => JSX.Element> = {
-  '#text': (obj: JsonType, _refs: RefType) => handleText(obj['body']!),
+  '#text': (obj, _refs) => handleText(obj.body!),
 
-  B: (obj: JsonType, refs: RefType) => <b>{parseArr(obj['child']!, refs)}</b>,
+  B: (obj, refs) => <b>{parseArr(obj.child!, refs)}</b>,
 
-  BR: (_obj: JsonType, _refs: RefType) => <br />,
+  BR: (_obj, _refs) => <br />,
 
   DISPLAYFOOTNOTE: handleFootnote,
 
-  EM: (obj: JsonType, refs: RefType) => <em>{parseArr(obj['child']!, refs)}</em>,
+  EM: (obj, refs) => <em>{parseArr(obj.child!, refs)}</em>,
 
   EPIGRAPH: handleEpigraph,
 
@@ -235,35 +226,35 @@ export const processingFunctions: Record<string, (obj: JsonType, refs: RefType) 
 
   FIGURE: handleFigure,
 
-  FOOTNOTE_REF: (obj: JsonType, refs: RefType) => (
+  FOOTNOTE_REF: (obj, refs) => (
     <sup ref={ref => (refs.current[obj.id!] = ref)}>{handleRef(obj, refs)}</sup>
   ),
 
-  JAVASCRIPTINLINE: (obj: JsonType, _refs: RefType) => <Code>{obj['body']}</Code>,
+  JAVASCRIPTINLINE: (obj, _refs) => <Code>{obj.body}</Code>,
 
-  LATEX: (obj: JsonType, _refs: RefType) => handleLatex(obj['body']!),
+  LATEX: (obj, _refs) => handleLatex(obj.body!),
 
-  LI: (obj: JsonType, refs: RefType) => <li>{parseArr(obj['child']!, refs)}</li>,
+  LI: (obj, refs) => <li>{parseArr(obj.child!, refs)}</li>,
 
-  LINK: (obj: JsonType, _refs: RefType) => <a href={obj['href']}>{obj['body']}</a>,
+  LINK: (obj, _refs) => <a href={obj.href}>{obj.body}</a>,
 
-  META: (obj: JsonType, _refs: RefType) => <em>{obj['body']}</em>,
+  META: (obj, _refs) => <em>{obj.body}</em>,
 
-  OL: (obj: JsonType, refs: RefType) => <OL>{parseArr(obj['child']!, refs)}</OL>,
+  OL: (obj, refs) => <OL>{parseArr(obj.child!, refs)}</OL>,
 
   REF: handleRef,
 
   REFERENCE: handleReference,
 
-  SNIPPET: (obj: JsonType, _refs: RefType) => handleSnippet(obj),
+  SNIPPET: (obj, _refs) => handleSnippet(obj),
 
-  SUBHEADING: (obj: JsonType, refs: RefType) => (
+  SUBHEADING: (obj, refs) => (
     <AnchorLink id={obj.id} refs={refs} top={2}>
       <H2>{parseArr(obj.child!, refs)}</H2>
     </AnchorLink>
   ),
 
-  SUBSUBHEADING: (obj: JsonType, refs: RefType) => (
+  SUBSUBHEADING: (obj, refs) => (
     <AnchorLink id={obj.id} refs={refs} top={16}>
       <H4>
         <br />
@@ -272,23 +263,23 @@ export const processingFunctions: Record<string, (obj: JsonType, refs: RefType) 
     </AnchorLink>
   ),
 
-  TABLE: (obj: JsonType, refs: RefType) => (
+  TABLE: (obj, refs) => (
     <table>
-      <tbody>{obj['child']!.map((x, index) => handleTR(x, refs, index))}</tbody>
+      <tbody>{obj.child!.map((x, index) => handleTR(x, refs, index))}</tbody>
     </table>
   ),
 
-  TEXT: (obj: JsonType, refs: RefType) => (
+  TEXT: (obj, refs) => (
     <AnchorLink id={obj.id} refs={refs} top={-3}>
-      <p className="sicp-text">{parseArr(obj['child']!, refs)}</p>
+      <p className="sicp-text">{parseArr(obj.child!, refs)}</p>
     </AnchorLink>
   ),
 
   TITLE: handleTitle,
 
-  TT: (obj: JsonType, refs: RefType) => <Code>{parseArr(obj['child']!, refs)}</Code>,
+  TT: (obj, refs) => <Code>{parseArr(obj.child!, refs)}</Code>,
 
-  UL: (obj: JsonType, refs: RefType) => <UL>{parseArr(obj['child']!, refs)}</UL>,
+  UL: (obj, refs) => <UL>{parseArr(obj.child!, refs)}</UL>,
 };
 
 // Parse array of objects. An array of objects represent sibling nodes.
