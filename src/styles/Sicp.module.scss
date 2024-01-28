@@ -72,3 +72,16 @@
     font-weight: 300;
   }
 }
+
+.sicp-exercise {
+  background-color: #fff;
+
+  > * + * {
+    margin-top: 5px;
+  }
+}
+
+.sicp-show-solution-button {
+  display: flex;
+  justify-content: flex-end;
+}

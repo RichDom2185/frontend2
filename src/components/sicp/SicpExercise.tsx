@@ -1,10 +1,12 @@
-import { Button, Card, Collapse, Elevation } from '@blueprintjs/core';
+import { Button, Card, Collapse } from '@blueprintjs/core';
 import React, { useState } from 'react';
+
+import classes from 'src/styles/Sicp.module.scss';
 
 type Props = {
   title: string;
-  body: JSX.Element;
-  solution: JSX.Element | undefined;
+  body: React.ReactNode;
+  solution: React.ReactNode;
 };
 
 const noSolutionPlaceholder = (
@@ -19,24 +21,22 @@ const noSolutionPlaceholder = (
   </span>
 );
 
-const SicpExercise: React.FC<Props> = props => {
+const SicpExercise: React.FC<Props> = ({ title, body, solution }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const onClick = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <Card className="sicp-exercise" interactive={false} elevation={Elevation.ONE}>
-      <b>{props.title}</b>
-      <div>{props.body}</div>
-      <div className="sicp-button-container">
-        <Button onClick={onClick} large={true} className="sicp-show-solution-button">
+    <Card className={classes['sicp-exercise']}>
+      <p>
+        <b>{title}</b>
+      </p>
+      {body}
+      <div className={classes['sicp-show-solution-button']}>
+        <Button minimal intent="primary" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? 'Hide Solution' : 'Show Solution'}
         </Button>
       </div>
-      <Collapse className="sicp-solution" isOpen={isOpen}>
-        {props.solution ? props.solution : noSolutionPlaceholder}
+      <Collapse isOpen={isOpen}>
+        <div>{solution || noSolutionPlaceholder}</div>
       </Collapse>
     </Card>
   );
