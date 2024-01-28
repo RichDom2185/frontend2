@@ -1,9 +1,9 @@
 import Constants from './constants';
+import SicpAnchorLink from 'src/components/sicp/SicpAnchorLink';
 import SicpCodeSnippet from 'src/components/sicp/SicpCodeSnippet';
 import SicpExercise from 'src/components/sicp/SicpExercise';
 import SicpLatex from 'src/components/sicp/SicpLatex';
-import { Blockquote, Code, H1, H2, H4, Icon, OL, Pre, UL } from '@blueprintjs/core';
-import { IconNames } from '@blueprintjs/icons';
+import { Blockquote, Code, H1, H2, H4, OL, Pre, UL } from '@blueprintjs/core';
 import { Link } from 'react-router-dom';
 import React from 'react';
 
@@ -39,32 +39,7 @@ export type JsonType = {
   prependLength?: number;
 };
 
-type RefType = React.MutableRefObject<Record<string, HTMLElement | null>>;
-type AnchorLinkType = {
-  children: React.ReactNode;
-  id: string | undefined;
-  refs: RefType;
-  top: number;
-};
-
-const AnchorLink: React.FC<AnchorLinkType> = props => {
-  const { refs, id, children, top } = props;
-  return (
-    <div className="sicp-anchor-link-container">
-      {id && (
-        <Link
-          className="sicp-anchor-link"
-          style={{ top: top }}
-          ref={ref => (refs.current[id] = ref)}
-          to={id}
-        >
-          <Icon icon={IconNames.LINK} />
-        </Link>
-      )}
-      {children}
-    </div>
-  );
-};
+export type RefType = React.MutableRefObject<Record<string, HTMLElement | null>>;
 
 const handleFootnote = (obj: JsonType, refs: RefType) => {
   return (
@@ -150,7 +125,7 @@ const handleSnippet = (obj: JsonType) => {
 };
 
 const handleFigure = (obj: JsonType, refs: RefType) => (
-  <AnchorLink id={obj.id} refs={refs} top={36}>
+  <SicpAnchorLink id={obj.id} refs={refs} top={36}>
     <div className="sicp-figure">
       {obj.src && handleImage(obj, refs)}
       {obj.snippet && processingFunctions['SNIPPET'](obj.snippet, refs)}
@@ -162,7 +137,7 @@ const handleFigure = (obj: JsonType, refs: RefType) => (
         </h5>
       )}
     </div>
-  </AnchorLink>
+  </SicpAnchorLink>
 );
 
 const handleImage = (obj: JsonType, _refs: RefType) => {
@@ -179,21 +154,21 @@ const handleTD = (obj: JsonType, refs: RefType, index: number) => {
 
 const handleExercise = (obj: JsonType, refs: RefType) => {
   return (
-    <AnchorLink id={obj.id} refs={refs} top={5}>
+    <SicpAnchorLink id={obj.id} refs={refs} top={5}>
       <SicpExercise
         title={obj.title!}
         body={parseArr(obj.child!, refs)}
         solution={obj.solution && parseArr(obj.solution, refs)}
       />
-    </AnchorLink>
+    </SicpAnchorLink>
   );
 };
 
 const handleTitle = (obj: JsonType, refs: RefType) => {
   return (
-    <AnchorLink id={obj.id} refs={refs} top={6}>
+    <SicpAnchorLink id={obj.id} refs={refs} top={6}>
       <H1>{obj.body}</H1>
-    </AnchorLink>
+    </SicpAnchorLink>
   );
 };
 
@@ -211,74 +186,50 @@ const handleLatex = (math: string) => {
 
 export const processingFunctions: Record<string, (obj: JsonType, refs: RefType) => JSX.Element> = {
   '#text': (obj, _refs) => handleText(obj.body!),
-
   B: (obj, refs) => <b>{parseArr(obj.child!, refs)}</b>,
-
   BR: (_obj, _refs) => <br />,
-
   DISPLAYFOOTNOTE: handleFootnote,
-
   EM: (obj, refs) => <em>{parseArr(obj.child!, refs)}</em>,
-
   EPIGRAPH: handleEpigraph,
-
   EXERCISE: handleExercise,
-
   FIGURE: handleFigure,
-
   FOOTNOTE_REF: (obj, refs) => (
     <sup ref={ref => (refs.current[obj.id!] = ref)}>{handleRef(obj, refs)}</sup>
   ),
-
   JAVASCRIPTINLINE: (obj, _refs) => <Code>{obj.body}</Code>,
-
   LATEX: (obj, _refs) => handleLatex(obj.body!),
-
   LI: (obj, refs) => <li>{parseArr(obj.child!, refs)}</li>,
-
   LINK: (obj, _refs) => <a href={obj.href}>{obj.body}</a>,
-
   META: (obj, _refs) => <em>{obj.body}</em>,
-
   OL: (obj, refs) => <OL>{parseArr(obj.child!, refs)}</OL>,
-
   REF: handleRef,
-
   REFERENCE: handleReference,
-
   SNIPPET: (obj, _refs) => handleSnippet(obj),
-
   SUBHEADING: (obj, refs) => (
-    <AnchorLink id={obj.id} refs={refs} top={2}>
+    <SicpAnchorLink id={obj.id} refs={refs} top={2}>
       <H2>{parseArr(obj.child!, refs)}</H2>
-    </AnchorLink>
+    </SicpAnchorLink>
   ),
-
   SUBSUBHEADING: (obj, refs) => (
-    <AnchorLink id={obj.id} refs={refs} top={16}>
+    <SicpAnchorLink id={obj.id} refs={refs} top={16}>
       <H4>
         <br />
         {parseArr(obj.child!, refs)}
       </H4>
-    </AnchorLink>
+    </SicpAnchorLink>
   ),
-
   TABLE: (obj, refs) => (
     <table>
       <tbody>{obj.child!.map((x, index) => handleTR(x, refs, index))}</tbody>
     </table>
   ),
-
   TEXT: (obj, refs) => (
-    <AnchorLink id={obj.id} refs={refs} top={-3}>
+    <SicpAnchorLink id={obj.id} refs={refs} top={-3}>
       <p className="sicp-text">{parseArr(obj.child!, refs)}</p>
-    </AnchorLink>
+    </SicpAnchorLink>
   ),
-
   TITLE: handleTitle,
-
   TT: (obj, refs) => <Code>{parseArr(obj.child!, refs)}</Code>,
-
   UL: (obj, refs) => <UL>{parseArr(obj.child!, refs)}</UL>,
 };
 
