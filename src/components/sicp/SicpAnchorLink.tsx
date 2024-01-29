@@ -3,6 +3,8 @@ import { Icon } from '@blueprintjs/core';
 import { Link } from 'react-router-dom';
 import React from 'react';
 
+import classes from 'src/styles/Sicp.module.scss';
+
 type Props = {
   children: React.ReactNode;
   id: string | undefined;
@@ -12,19 +14,21 @@ type Props = {
 
 const SicpAnchorLink: React.FC<Props> = ({ refs, id, children, top }) => {
   return (
-    <div className="sicp-anchor-link-container">
-      {id && (
-        <Link
-          className="sicp-anchor-link"
-          style={{ top: top }}
-          ref={ref => (refs.current[id] = ref)}
-          to={id}
-        >
-          <Icon icon="link" />
-        </Link>
-      )}
+    <>
+      <div className={classes['sicp-anchor-link-container']}>
+        {id && (
+          <Link
+            className={classes['sicp-anchor-link']}
+            style={{ top: top }}
+            ref={node => (refs.current[id] = node)}
+            to={id}
+          >
+            <Icon icon="link" />
+          </Link>
+        )}
+      </div>
       {children}
-    </div>
+    </>
   );
 };
 
