@@ -11,7 +11,7 @@ import classNames from 'classnames';
 import { useLocation, useParams } from 'react-router-dom';
 import React, { useEffect, useRef, useState } from 'react';
 
-import classes from 'src/styles/sicp.module.scss';
+import classes from 'src/styles/Sicp.module.scss';
 
 const Sicp: React.FC = () => {
   const { chapter } = useParams<{ chapter: string }>();

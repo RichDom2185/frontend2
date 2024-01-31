@@ -42,6 +42,12 @@ const EditorComponent: React.ForwardRefRenderFunction<ImperativeEditor, Props> =
   const [resizeFocused, setResizeFocused] = useState(false);
 
   useEffect(() => {
+    if (!multiFile) {
+      fileExplorerRef.current?.collapse();
+    }
+  }, [multiFile]);
+
+  useEffect(() => {
     if (fileExplorerOpen) {
       fileExplorerRef.current?.expand();
     } else {
