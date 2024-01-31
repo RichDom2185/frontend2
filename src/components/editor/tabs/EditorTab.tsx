@@ -2,6 +2,8 @@ import { Card, Icon } from '@blueprintjs/core';
 import classNames from 'classnames';
 import React from 'react';
 
+import classes from 'src/styles/EditorTab.module.scss';
+
 type Props = {
   filePath: string;
   isActive: boolean;
@@ -18,13 +20,13 @@ const EditorTab: React.FC<Props> = ({ filePath, isActive, setActive, remove }) =
 
   return (
     <Card
-      className={classNames('editor-tab', {
-        selected: isActive,
+      className={classNames(classes['editor-tab'], {
+        [classes['selected']]: isActive,
       })}
       onClick={setActive}
     >
       {filePath}
-      <Icon className="remove-button" icon="small-cross" onClick={onClick} />
+      <Icon className={classes['remove-button']} icon="small-cross" onClick={onClick} />
     </Card>
   );
 };

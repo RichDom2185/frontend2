@@ -4,9 +4,10 @@ import 'ace-builds/src-noconflict/mode-javascript';
 import 'ace-builds/src-noconflict/theme-twilight';
 
 import FileSystemView from '../fileSystemView/FileSystemView';
+import EditorTabContainer from './tabs/EditorTabContainer';
 import { RootState } from 'src/store';
 import { EditorFile } from 'src/types/editor';
-import { Button } from '@blueprintjs/core';
+import { Classes } from '@blueprintjs/core';
 import AceEditor from 'react-ace';
 import {
   ImperativePanelHandle,
@@ -68,7 +69,18 @@ const EditorComponent: React.ForwardRefRenderFunction<ImperativeEditor, Props> =
         />
       )}
       <Panel>
-        {multiFile && <Button icon="menu" onClick={() => setFileExplorerOpen(v => !v)} />}
+        {multiFile && (
+          <div className={Classes.DARK}>
+            <EditorTabContainer
+              baseFilePath="/"
+              filePaths={['testMock1.js', 'testMock2.js', 'testMock3.ts']}
+              activeEditorTabIndex={1}
+              setActiveEditorTabIndex={() => {}}
+              removeEditorTabByIndex={() => {}}
+              onMenuButtonClick={() => setFileExplorerOpen(v => !v)}
+            />
+          </div>
+        )}
         <AceEditor
           ref={ref}
           mode="javascript"

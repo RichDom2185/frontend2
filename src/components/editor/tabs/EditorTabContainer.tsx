@@ -1,6 +1,9 @@
 import { getShortestUniqueFilePaths } from '../../../utils/editor/tabs';
 import EditorTab from './EditorTab';
+import { Button } from '@blueprintjs/core';
 import React from 'react';
+
+import classes from 'src/styles/EditorTab.module.scss';
 
 type Props = {
   baseFilePath: string;
@@ -8,6 +11,8 @@ type Props = {
   activeEditorTabIndex: number;
   setActiveEditorTabIndex: (activeEditorTabIndex: number | null) => void;
   removeEditorTabByIndex: (editorTabIndex: number) => void;
+  /** Will only show menu button when defined */
+  onMenuButtonClick?: () => void;
 };
 
 const EditorTabContainer: React.FC<Props> = ({
@@ -16,6 +21,7 @@ const EditorTabContainer: React.FC<Props> = ({
   activeEditorTabIndex,
   setActiveEditorTabIndex,
   removeEditorTabByIndex,
+  onMenuButtonClick,
 }) => {
   const handleHorizontalScroll = (e: React.WheelEvent<HTMLDivElement>) => {
     e.currentTarget.scrollTo({
@@ -27,7 +33,8 @@ const EditorTabContainer: React.FC<Props> = ({
   const shortenedFilePaths = getShortestUniqueFilePaths(relativeFilePaths);
 
   return (
-    <div className="editor-tab-container" onWheel={handleHorizontalScroll}>
+    <div className={classes['editor-tab-container']} onWheel={handleHorizontalScroll}>
+      {onMenuButtonClick && <Button minimal icon="menu" onClick={onMenuButtonClick} />}
       {shortenedFilePaths.map((filePath, index) => (
         <EditorTab
           key={index}
