@@ -8,6 +8,7 @@ type Props = {
   disabled?: boolean;
   disableFilters?: [(l: LanguageConfig) => boolean, string][];
   group: LanguageGroup;
+  minimal?: boolean;
   onSelect?: (lang: LanguageConfig) => void;
 };
 
@@ -49,7 +50,13 @@ const createMenuItemRenderer = (
   return renderer;
 };
 
-const LanguageSelector: React.FC<Props> = ({ disabled, disableFilters = [], group, onSelect }) => {
+const LanguageSelector: React.FC<Props> = ({
+  disabled,
+  disableFilters = [],
+  group,
+  minimal,
+  onSelect,
+}) => {
   // TODO: Make this a controlled component
   const [selectedItem, setSelectedItem] = useState<LanguageConfig | undefined>(undefined);
   const options = useMemo(
@@ -69,6 +76,21 @@ const LanguageSelector: React.FC<Props> = ({ disabled, disableFilters = [], grou
     () => createMenuItemRenderer(handleSelect, disableFilters),
     [disableFilters, handleSelect]
   );
+
+  if (minimal) {
+    return (
+      <Popover content={buildMenu(options, renderer)} placement="bottom">
+        <Button
+          minimal={disabled}
+          ellipsizeText={!disabled}
+          style={{ maxWidth: disabled ? undefined : 100 }}
+          disabled={disabled}
+        >
+          {selectedItem?.displayName ?? 'Language'}
+        </Button>
+      </Popover>
+    );
+  }
 
   return (
     <Popover content={buildMenu(options, renderer)} placement="bottom">
