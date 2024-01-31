@@ -1,6 +1,6 @@
 import { getShortestUniqueFilePaths } from '../../../utils/editor/tabs';
 import EditorTab from './EditorTab';
-import { Button } from '@blueprintjs/core';
+import { Button, Tooltip } from '@blueprintjs/core';
 import React from 'react';
 
 import classes from 'src/styles/EditorTab.module.scss';
@@ -34,7 +34,11 @@ const EditorTabContainer: React.FC<Props> = ({
 
   return (
     <div className={classes['editor-tab-container']} onWheel={handleHorizontalScroll}>
-      {onMenuButtonClick && <Button minimal icon="menu" onClick={onMenuButtonClick} />}
+      {onMenuButtonClick && (
+        <Tooltip content="Show/Hide File Explorer">
+          <Button minimal icon="menu" onClick={onMenuButtonClick} />
+        </Tooltip>
+      )}
       {shortenedFilePaths.map((filePath, index) => (
         <EditorTab
           key={index}

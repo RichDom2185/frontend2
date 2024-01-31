@@ -6,11 +6,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: $dark-gray1;
+  background-color: $dark-gray2;
   padding-inline: 12px;
   column-gap: 6px;
 
-  button {
+  .run-button {
     font-weight: 600;
   }
 }
