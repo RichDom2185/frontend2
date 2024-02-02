@@ -2,13 +2,15 @@
 
 .mobile-control-bar {
   border-top: 1px solid $dark-gray4;
-  height: 48px;
+  height: 40px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: $dark-gray1;
   padding-inline: 6px;
   column-gap: 3px;
+  z-index: 11;
 
   button {
     font-size: 0.8em;
@@ -22,4 +24,19 @@
 
 .overflow {
   overflow-x: auto;
+}
+
+.bottom-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba($dark-gray1, 0.7);
+  z-index: 10;
+}
+
+.bottom-sheet-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }
