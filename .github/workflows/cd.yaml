@@ -25,6 +25,16 @@ jobs:
         run: yarn install
       - name: Build Site
         run: yarn build --base=/frontend2/
+        env:
+          VITE_APP_NAME: ${{ secrets.VITE_APP_NAME }}
+          VITE_BACKEND_URL: ${{ secrets.VITE_BACKEND_URL }}
+          VITE_SICP_BACKEND_URL: ${{ secrets.VITE_SICP_BACKEND_URL }}
+          VITE_FEATURE_ENABLE_SOURCE: ${{ secrets.VITE_FEATURE_ENABLE_SOURCE }}
+          VITE_FEATURE_ENABLE_FULL_JS: ${{ secrets.VITE_FEATURE_ENABLE_FULL_JS }}
+          VITE_FEATURE_ENABLE_FULL_TS: ${{ secrets.VITE_FEATURE_ENABLE_FULL_TS }}
+          VITE_FEATURE_ENABLE_HTML: ${{ secrets.VITE_FEATURE_ENABLE_HTML }}
+          VITE_FEATURE_ENABLE_PYTHON: ${{ secrets.VITE_FEATURE_ENABLE_PYTHON }}
+          VITE_FEATURE_ENABLE_SCHEME: ${{ secrets.VITE_FEATURE_ENABLE_SCHEME }}
       - name: Deploy Docs
         uses: peaceiris/actions-gh-pages@v3
         with:
