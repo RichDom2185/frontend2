@@ -1,11 +1,15 @@
 @import "src/styles/variables.scss";
 
+.mobile-side-content-container {
+  display: flex;
+  height: 100%;
+}
+
 .mobile-side-content {
   width: 100%;
   background-color: $cadet-color-3;
   user-select: none;
   padding: 6px 10px;
-  row-gap: 15px;
   border-top: 5px solid $cadet-color-2;
 
   > * + * {
@@ -17,4 +21,8 @@
 .mobile-side-content-header {
   display: flex;
   justify-content: space-between;
+}
+
+.mobile-side-content-resize-handle {
+  background-color: $cadet-color-2;
 }

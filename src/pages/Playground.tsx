@@ -5,14 +5,32 @@ import MobileControlBar from 'src/components/controlBar/MobileControlBar';
 import { useResponsive } from 'src/utils/hooks';
 import { Button, Card, Classes } from '@blueprintjs/core';
 import classNames from 'classnames';
-import React, { useRef, useState } from 'react';
+import {
+  getPanelGroupElement,
+  ImperativePanelHandle,
+  Panel,
+  PanelGroup,
+  PanelResizeHandle,
+} from 'react-resizable-panels';
+import React, { useEffect, useRef, useState } from 'react';
 
 import classes from 'src/styles/Playground.module.scss';
+
+const barHeight = 5;
 
 const Playground: React.FC = () => {
   const [folderMode, setFolderMode] = useState(false);
   const { isMobileBreakpoint } = useResponsive();
   const pinnedBottomSheetRef = useRef<HTMLDivElement>(null);
+
+  // Fix to calculate absolute height (in pixels)
+  const sheetPanelRef = useRef<ImperativePanelHandle>(null);
+  const bottomSheetRef = useRef<HTMLDivElement>(null);
+  const panelGroupRef = useRef<HTMLElement | null>();
+  useEffect(() => {
+    const groupElement = getPanelGroupElement('workspace-group');
+    panelGroupRef.current = groupElement;
+  }, []);
 
   return (
     <>
@@ -20,18 +38,59 @@ const Playground: React.FC = () => {
       {!isMobileBreakpoint && (
         <ControlBar defaultFolderMode={folderMode} handleFolderModeChange={setFolderMode} />
       )}
-      <Editor multiFile={folderMode} />
-      <div ref={pinnedBottomSheetRef} />
+      <PanelGroup direction="vertical" id="workspace-group">
+        <Panel>
+          <Editor multiFile={folderMode} />
+        </Panel>
+        <Panel ref={sheetPanelRef} defaultSize={0}>
+          <PanelResizeHandle
+            className={classes['mobile-side-content-resize-handle']}
+            style={{ height: barHeight }}
+          />
+          <div className={classes['mobile-side-content-container']} ref={pinnedBottomSheetRef} />
+        </Panel>
+      </PanelGroup>
       {isMobileBreakpoint && (
         <MobileControlBar
           portalRef={pinnedBottomSheetRef}
           renderBottomSheet={(close, pinned, setPinned, tabIndex) => (
-            <div className={classNames(Classes.DARK, classes['mobile-side-content'])}>
+            <div
+              ref={bottomSheetRef}
+              className={classNames(Classes.DARK, classes['mobile-side-content'])}
+              style={{ borderTopWidth: pinned ? 0 : barHeight }}
+            >
               <div className={classes['mobile-side-content-header']}>
-                <Button small minimal icon="pin" active={pinned} onClick={() => setPinned(!pinned)}>
+                <Button
+                  small
+                  minimal
+                  icon="pin"
+                  active={pinned}
+                  onClick={() => {
+                    setPinned(!pinned);
+                    if (pinned) {
+                      // pinned -> unpinned
+                      sheetPanelRef.current?.resize(0);
+                    } else {
+                      // unpinned -> pinned
+                      const sheetHeight = bottomSheetRef.current?.clientHeight;
+                      const panelHeight = panelGroupRef.current?.clientHeight;
+                      const resizeHeight = ((sheetHeight! + barHeight) / panelHeight!) * 100;
+                      sheetPanelRef.current?.resize(resizeHeight);
+                    }
+                  }}
+                >
                   {pinned ? 'Unpin' : 'Pin'}
                 </Button>
-                <Button small minimal rightIcon="cross" onClick={close} intent="danger">
+                <Button
+                  small
+                  minimal
+                  rightIcon="cross"
+                  onClick={() => {
+                    sheetPanelRef.current?.resize(0);
+                    close();
+                  }}
+                  intent="danger"
+                >
                   Close
                 </Button>
               </div>
