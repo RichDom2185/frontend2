@@ -32,6 +32,9 @@ const Playground: React.FC = () => {
     panelGroupRef.current = groupElement;
   }, []);
 
+  // Fix for resizing to <= 3%
+  const resizeHeight = useRef<number>();
+
   return (
     <>
       <NavigationBar />
@@ -46,6 +49,13 @@ const Playground: React.FC = () => {
           <PanelResizeHandle
             className={classes['mobile-side-content-resize-handle']}
             style={{ height: barHeight }}
+            onDragging={dragging => {
+              // Only resize if final size is <= 3%
+              if (dragging || (sheetPanelRef.current?.getSize() ?? 0) > 3) {
+                return;
+              }
+              sheetPanelRef.current?.resize(resizeHeight.current!);
+            }}
           />
           <div className={classes['mobile-side-content-container']} ref={pinnedBottomSheetRef} />
         </Panel>
@@ -74,8 +84,8 @@ const Playground: React.FC = () => {
                       // unpinned -> pinned
                       const sheetHeight = bottomSheetRef.current?.clientHeight;
                       const panelHeight = panelGroupRef.current?.clientHeight;
-                      const resizeHeight = ((sheetHeight! + barHeight) / panelHeight!) * 100;
-                      sheetPanelRef.current?.resize(resizeHeight);
+                      resizeHeight.current = ((sheetHeight! + barHeight) / panelHeight!) * 100;
+                      sheetPanelRef.current?.resize(resizeHeight.current);
                     }
                   }}
                 >

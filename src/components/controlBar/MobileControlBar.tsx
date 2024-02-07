@@ -111,14 +111,17 @@ const MobileControlBar: React.FC<Props> = ({ portalRef, renderBottomSheet }) => 
   );
 
   return (
-    <Drawer.Root open={isBottomSheetOpen}>
+    <Drawer.Root open={isBottomSheetOpen} onOpenChange={setIsBottomSheetOpen}>
       {controlBar}
       <Drawer.Portal>
         <Drawer.Overlay
           onClick={() => setIsBottomSheetOpen(false)}
           className={classes['bottom-sheet-overlay']}
         />
-        <Drawer.Content className={classes['bottom-sheet-container']}>
+        <Drawer.Content
+          className={classes['bottom-sheet-container']}
+          onFocus={e => e.target.blur()}
+        >
           {!pinMobileBottomSheet ? bottomSheet : <div />}
           {/* TODO: Investigate deduplication */}
           {controlBar}
