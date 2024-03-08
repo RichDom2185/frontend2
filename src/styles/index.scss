@@ -3,6 +3,8 @@
 @import "./variables.scss";
 @import "@blueprintjs/core/src/blueprint.scss";
 
+@import "katex/dist/katex.min.css";
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 

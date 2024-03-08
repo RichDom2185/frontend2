@@ -212,10 +212,7 @@ export const processingFunctions: Record<string, (obj: JsonType, refs: RefType) 
   ),
   SUBSUBHEADING: (obj, refs) => (
     <SicpAnchorLink id={obj.id} refs={refs} top={16}>
-      <H4>
-        <br />
-        {parseArr(obj.child!, refs)}
-      </H4>
+      <H4>{parseArr(obj.child!, refs)}</H4>
     </SicpAnchorLink>
   ),
   TABLE: (obj, refs) => (
