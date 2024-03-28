@@ -2822,9 +2822,9 @@ js-base64@^3.7.5:
   integrity sha512-7rCnleh0z2CkXhH67J8K1Ytz0b2Y+yxTPL+/KOJoa20hfnVQ/3/T6W/KflYI4bRHRagNeXeU2bkNGI3v1oS/lw==
 
 js-slang@^1.0.37:
-  version "1.0.50"
-  resolved "https://registry.yarnpkg.com/js-slang/-/js-slang-1.0.50.tgz#a18a7d02013b1e3555b5d5bea425ccee26d5b153"
-  integrity sha512-zgxhCUdAqh0TRCU5eizE35AgQYmxZyBhH8AnRap4eI1T5krGRlHwXzy9r05pTTKnK1LjR09sNVM6W7ai/i9q0w==
+  version "1.0.55"
+  resolved "https://registry.yarnpkg.com/js-slang/-/js-slang-1.0.55.tgz#401829c277a315cadcde9702a48edd60cea52bf9"
+  integrity sha512-M1m4l2cbxqVRkHTAAin0mT6FWsDvj+/NZsp9usBKL0UVaht/afl2/FSuryzdcZgQ1vo2wLqNbFFV94y0r6D5PQ==
   dependencies:
     "@babel/parser" "^7.19.4"
     "@joeychenofficial/alt-ergo-modified" "^2.4.0"
@@ -4133,9 +4133,9 @@ tar-stream@^2.1.4:
     readable-stream "^3.1.1"
 
 tar@^6.1.11, tar@^6.1.2:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/tar/-/tar-6.2.0.tgz#b14ce49a79cb1cd23bc9b016302dea5474493f73"
-  integrity sha512-/Wo7DcT0u5HUV486xg675HtjNd3BXZ6xDbzsCUZPt5iw8bTQ63bP0Raut3mvro9u+CUyq7YQd8Cx55fsZXxqLQ==
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/tar/-/tar-6.2.1.tgz#717549c541bc3c2af15751bea94b1dd068d4b03a"
+  integrity sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==
   dependencies:
     chownr "^2.0.0"
     fs-minipass "^2.0.0"
