@@ -13,15 +13,15 @@
     "@blueprintjs/core": "^5.8.2",
     "@reduxjs/toolkit": "^2.0.1",
     "@szhsin/react-menu": "^4.1.0",
-    "ace-builds": "^1.32.3",
+    "ace-builds": "^1.32.8",
     "axios": "^1.6.8",
     "browserfs": "^1.4.3",
     "classnames": "^2.5.1",
-    "js-slang": "^1.0.37",
+    "js-slang": "^1.0.57",
     "lodash.clonedeep": "^4.5.0",
     "path-browserify": "^1.0.1",
     "react": "^18.2.0",
-    "react-ace": "^10.1.0",
+    "react-ace": "^11.0.1",
     "react-dom": "^18.2.0",
     "react-latex-next": "^2.3.0",
     "react-redux": "^9.1.0",
@@ -46,7 +46,7 @@
     "eslint-plugin-simple-import-sort": "^12.0.0",
     "sass": "^1.72.0",
     "typescript": "^5.3.3",
-    "vite": "^5.1.6"
+    "vite": "^5.2.6"
   },
   "resolutions": {
     "**/gl": "^6.0.0"
