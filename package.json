@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "@blueprintjs/core": "^5.10.1",
-    "@reduxjs/toolkit": "^2.0.1",
+    "@reduxjs/toolkit": "^2.2.3",
     "@szhsin/react-menu": "^4.1.0",
-    "ace-builds": "^1.32.9",
+    "ace-builds": "^1.33.0",
     "axios": "^1.6.8",
     "browserfs": "^1.4.3",
     "classnames": "^2.5.1",
-    "js-slang": "^1.0.65",
+    "js-slang": "^1.0.68",
     "lodash.clonedeep": "^4.5.0",
     "path-browserify": "^1.0.1",
     "react": "^18.2.0",
@@ -32,9 +32,9 @@
   },
   "devDependencies": {
     "@types/lodash.clonedeep": "^4.5.9",
-    "@types/node": "^20.11.28",
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.78",
+    "@types/react-dom": "^18.2.25",
     "@typescript-eslint/eslint-plugin": "^7.6.0",
     "@typescript-eslint/parser": "^7.6.0",
     "@vitejs/plugin-react": "^4.2.1",
@@ -43,10 +43,10 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "eslint-plugin-simple-import-sort": "^12.0.0",
-    "sass": "^1.72.0",
-    "typescript": "^5.3.3",
-    "vite": "^5.2.6"
+    "eslint-plugin-simple-import-sort": "^12.1.0",
+    "sass": "^1.75.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.8"
   },
   "resolutions": {
     "**/gl": "^6.0.0"
