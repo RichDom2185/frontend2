@@ -17,7 +17,7 @@
     "axios": "^1.6.8",
     "browserfs": "^1.4.3",
     "classnames": "^2.5.1",
-    "js-slang": "^1.0.68",
+    "js-slang": "^1.0.74",
     "lodash.clonedeep": "^4.5.0",
     "path-browserify": "^1.0.1",
     "react": "^18.2.0",
