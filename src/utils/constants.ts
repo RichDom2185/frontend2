@@ -1,4 +1,5 @@
 const appName: string = import.meta.env.VITE_APP_NAME || '';
+const baseUrl = import.meta.env.BASE_URL;
 const backendUrl: string = import.meta.env.VITE_BACKEND_URL || '';
 const sicpBackendUrl: string = import.meta.env.VITE_SICP_BACKEND_URL || '';
 
@@ -12,6 +13,7 @@ const enableScheme: boolean = import.meta.env.VITE_FEATURE_ENABLE_SCHEME === 'TR
 
 const Constants = Object.freeze({
   appName,
+  baseUrl,
   backendUrl,
   sicpBackendUrl,
   featureFlags: {
