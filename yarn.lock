@@ -1482,7 +1482,7 @@ commander@^12.0.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-12.1.0.tgz#01423b36f501259fdaac4d0e4d60c96c991585d3"
   integrity sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==
 
-commander@^8.0.0:
+commander@^8.3.0:
   version "8.3.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-8.3.0.tgz#4837ea1b2da67b9c616a67afbb0fafee567bca66"
   integrity sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==
@@ -2832,12 +2832,12 @@ json5@^2.2.3:
     object.assign "^4.1.4"
     object.values "^1.1.6"
 
-katex@^0.13.0:
-  version "0.13.24"
-  resolved "https://registry.yarnpkg.com/katex/-/katex-0.13.24.tgz#fe55455eb455698cb24b911a353d16a3c855d905"
-  integrity sha512-jZxYuKCma3VS5UuxOx/rFV1QyGSl3Uy/i0kTJF3HgQ5xMinCQVF8Zd4bMY/9aI9b9A2pjIBOsjSSm68ykTAr8w==
+katex@^0.16.0:
+  version "0.16.10"
+  resolved "https://registry.yarnpkg.com/katex/-/katex-0.16.10.tgz#6f81b71ac37ff4ec7556861160f53bc5f058b185"
+  integrity sha512-ZiqaC04tp2O5utMsl2TEZTXxa6WSC4yo0fv5ML++D3QZv/vx2Mct0mTlRx3O+uUkjfuAgOkzsCmq5MiUEsDDdA==
   dependencies:
-    commander "^8.0.0"
+    commander "^8.3.0"
 
 keyv@^4.5.3:
   version "4.5.4"
@@ -3472,12 +3472,12 @@ react-is@^16.13.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-latex-next@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/react-latex-next/-/react-latex-next-2.3.0.tgz#37c59416a4446f1dfcee05b7541569a394070043"
-  integrity sha512-R6Q3fML5JHr7x50C22TIulsBBBz5dHefCbx1+rUQjjDnfAq3c3MbjNj1RGH8pOMV6UgAkrJyNHLTU3wOuIedQg==
+react-latex-next@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-latex-next/-/react-latex-next-3.0.0.tgz#3e347a13b1e701439b5fa52f75201bc86166854e"
+  integrity sha512-x70f1b1G7TronVigsRgKHKYYVUNfZk/3bciFyYX1lYLQH2y3/TXku3+5Vap8MDbJhtopePSYBsYWS6jhzIdz+g==
   dependencies:
-    katex "^0.13.0"
+    katex "^0.16.0"
 
 react-popper@^2.3.0:
   version "2.3.0"
