@@ -738,9 +738,9 @@
   integrity sha512-aJ1EJSuTdGnM6qbVC4B5DSmozPTqIag9fSzXRNNo+humQLG89XpPgdt16Ia56ORD7s+H8Pmyx44uczDQ0yDzpg==
 
 "@szhsin/react-menu@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@szhsin/react-menu/-/react-menu-4.1.0.tgz#9a5fd3029356ae7a15122e2b378924b1989f8afd"
-  integrity sha512-lYYGUxqJxM2b/jD2Cn5a9RVOvHl9VBMX8qOnHZuX1w08cO2jslykpz5P75D7WnqudLnXsJ4k4+tI+q2U8XIFYw==
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@szhsin/react-menu/-/react-menu-4.2.2.tgz#a98d66161971e2802baa5123cc96fc9ef9b9b5b3"
+  integrity sha512-xI1LlPlOAmyjcnBxEwhathJs3YV0U+4hbEKMbR2CXK2O9X+r7g02l5EqB9Slsjj1poVMpgQvf81vOZuCw1HUjg==
   dependencies:
     prop-types "^15.7.2"
     react-transition-state "^2.1.0"
