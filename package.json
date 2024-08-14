@@ -14,7 +14,7 @@
     "@reduxjs/toolkit": "^2.2.3",
     "@szhsin/react-menu": "^4.1.0",
     "ace-builds": "^1.33.0",
-    "axios": "^1.6.8",
+    "axios": "^1.7.4",
     "browserfs": "^1.4.3",
     "classnames": "^2.5.1",
     "js-slang": "^1.0.74",
