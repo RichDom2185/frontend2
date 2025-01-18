@@ -1,1 +1,0 @@
-import{I as n}from"./index-BCb0K0F6.js";import{I as e}from"./index-DXdpBgUv.js";import{bi as t,I as s}from"./NavigationBar-DW8HooRP.js";import"./index-DD9N7m0O.js";function p(o,a){var r=t(o);return a===s.STANDARD?n[r]:e[r]}function f(o){return t(o)}export{n as IconSvgPaths16,e as IconSvgPaths20,p as getIconPaths,f as iconNameToPathsRecordKey};
