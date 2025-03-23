@@ -713,12 +713,11 @@
   integrity sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==
 
 "@szhsin/react-menu@^4.1.0":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@szhsin/react-menu/-/react-menu-4.2.2.tgz#a98d66161971e2802baa5123cc96fc9ef9b9b5b3"
-  integrity sha512-xI1LlPlOAmyjcnBxEwhathJs3YV0U+4hbEKMbR2CXK2O9X+r7g02l5EqB9Slsjj1poVMpgQvf81vOZuCw1HUjg==
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@szhsin/react-menu/-/react-menu-4.3.1.tgz#ed097b36332e57b73482c2238b5471dbea7b0fa2"
+  integrity sha512-HjGvsPxtkgo0Nb+BLrZ8nBeGbjdZCmpsokOcXzo704kZ+27oMsFZtogvia72HMmledia9+TlgxOvor2H4JhNGA==
   dependencies:
-    prop-types "^15.7.2"
-    react-transition-state "^2.1.0"
+    react-transition-state "^2.2.0"
 
 "@ts-morph/bootstrap@^0.18.0":
   version "0.18.0"
@@ -3402,7 +3401,7 @@ promise-retry@^2.0.1:
     err-code "^2.0.2"
     retry "^0.12.0"
 
-prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
+prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -3569,10 +3568,10 @@ react-transition-group@^4.4.5:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react-transition-state@^2.1.0:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/react-transition-state/-/react-transition-state-2.1.1.tgz#1601a6177926b647041b7d598bf124321ab8d25b"
-  integrity sha512-kQx5g1FVu9knoz1T1WkapjUgFz08qQ/g1OmuWGi3/AoEFfS0kStxrPlZx81urjCXdz2d+1DqLpU6TyLW/Ro04Q==
+react-transition-state@^2.2.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-transition-state/-/react-transition-state-2.3.0.tgz#ca73ed9f78a86c284459be2cc1e811b59a0df17d"
+  integrity sha512-OucQRyIpeq5g1/5qSBJH4p4U+SzYEoB3MsAXXz3ty116rPqG4jhwrzInImZ2gFi4XOffeLu6HNCZvkCM3DKaeg==
 
 react-uid@^2.3.3:
   version "2.4.0"
