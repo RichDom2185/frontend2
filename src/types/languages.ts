@@ -32,10 +32,7 @@ export const variantDisplay: Record<Variant, string> = {
   [Variant.DEFAULT]: '',
   [Variant.TYPED]: 'Typed',
   [Variant.WASM]: 'WebAssembly',
-  [Variant.NON_DET]: 'Non-Det',
   [Variant.CONCURRENT]: 'Concurrent',
-  [Variant.LAZY]: 'Lazy',
-  [Variant.GPU]: 'GPU',
   [Variant.NATIVE]: 'Native',
   [Variant.EXPLICIT_CONTROL]: 'Explicit-Control',
 };
