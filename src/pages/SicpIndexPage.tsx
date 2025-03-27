@@ -1,7 +1,6 @@
 import SicpToc from 'src/components/sicp/SicpToc';
 import { Divider, H1, H2, H4 } from '@blueprintjs/core';
 import classNames from 'classnames';
-import React from 'react';
 
 import classes from 'src/styles/Sicp.module.scss';
 

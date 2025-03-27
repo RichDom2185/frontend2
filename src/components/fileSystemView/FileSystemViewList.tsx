@@ -5,7 +5,7 @@ import { WorkspaceLocation } from 'src/types/store/workspaces';
 import { Spinner, SpinnerSize } from '@blueprintjs/core';
 import { FSModule } from 'browserfs/dist/node/core/FS';
 import path from 'path';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import classes from 'src/styles/FileSystemView.module.scss';
 

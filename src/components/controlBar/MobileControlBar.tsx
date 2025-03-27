@@ -4,7 +4,7 @@ import { TabId, tabIdToIconMap, tabIdToLabelMap } from 'src/utils/sideContent';
 import { Button, Classes, Divider, Position, Tooltip } from '@blueprintjs/core';
 import classNames from 'classnames';
 import { Drawer } from 'vaul';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import classes from 'src/styles/MobileControlBar.module.scss';

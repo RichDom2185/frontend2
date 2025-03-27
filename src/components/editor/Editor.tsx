@@ -15,7 +15,7 @@ import {
   PanelGroup,
   PanelResizeHandle,
 } from 'react-resizable-panels';
-import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 export type ImperativeEditor = {
   getCode: () => string;
@@ -102,7 +102,7 @@ const EditorComponent: React.ForwardRefRenderFunction<ImperativeEditor, Props> =
   );
 };
 
-const Editor = React.forwardRef(EditorComponent);
+const Editor = forwardRef(EditorComponent);
 Editor.displayName = 'Editor';
 
 export default Editor;

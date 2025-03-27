@@ -8,7 +8,7 @@ import { useAppSelector } from 'src/utils/hooks';
 import { Icon } from '@blueprintjs/core';
 import { IconNames } from '@blueprintjs/icons';
 import path from 'path';
-import React from 'react';
+import { useState } from 'react';
 
 import classes from 'src/styles/FileSystemView.module.scss';
 
@@ -21,9 +21,9 @@ const FileSystemView: React.FC<FileSystemViewProps> = (props: FileSystemViewProp
   const { workspaceLocation, basePath } = props;
   const fileSystem = useAppSelector(state => state.fileSystem.inBrowserFileSystem);
 
-  const [isAddingNewFile, setIsAddingNewFile] = React.useState<boolean>(false);
-  const [isAddingNewDirectory, setIsAddingNewDirectory] = React.useState<boolean>(false);
-  const [fileSystemViewListKey, setFileSystemViewListKey] = React.useState<number>(0);
+  const [isAddingNewFile, setIsAddingNewFile] = useState<boolean>(false);
+  const [isAddingNewDirectory, setIsAddingNewDirectory] = useState<boolean>(false);
+  const [fileSystemViewListKey, setFileSystemViewListKey] = useState<number>(0);
 
   const handleCreateNewFile = () => setIsAddingNewFile(true);
   const handleCreateNewDirectory = () => setIsAddingNewDirectory(true);

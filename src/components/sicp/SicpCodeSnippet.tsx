@@ -1,5 +1,4 @@
 import { Card, Elevation } from '@blueprintjs/core';
-import React from 'react';
 
 type Props = {
   body: string;

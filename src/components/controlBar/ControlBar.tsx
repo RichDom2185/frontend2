@@ -2,7 +2,7 @@ import LanguageSelector from './LanguageSelector';
 import { LanguageGroup } from 'src/types/languages';
 import { Button, Classes, Switch } from '@blueprintjs/core';
 import classNames from 'classnames';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import classes from 'src/styles/ControlBar.module.scss';
 

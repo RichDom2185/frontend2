@@ -1,7 +1,7 @@
 import { useAppDispatch } from 'src/utils/hooks';
 import { Thunk } from 'src/utils/store';
 import { Card } from '@blueprintjs/core';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type Props<T> = {
   loader: Thunk<T>;

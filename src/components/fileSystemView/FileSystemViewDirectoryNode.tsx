@@ -10,7 +10,7 @@ import { Icon } from '@blueprintjs/core';
 import { IconNames } from '@blueprintjs/icons';
 import { FSModule } from 'browserfs/dist/node/core/FS';
 import path from 'path';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import classes from 'src/styles/FileSystemView.module.scss';
 

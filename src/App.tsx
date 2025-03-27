@@ -2,7 +2,6 @@ import { routes } from './routes';
 import Constants from './utils/constants';
 import { useDetectKeyboard } from './utils/hooks';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import React from 'react';
 
 import classes from 'src/styles/app.module.scss';
 

@@ -1,5 +1,4 @@
 import Latex from 'react-latex-next';
-import React from 'react';
 
 type Props = {
   math: string;

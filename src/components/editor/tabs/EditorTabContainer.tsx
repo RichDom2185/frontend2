@@ -1,7 +1,6 @@
 import { getShortestUniqueFilePaths } from '../../../utils/editor/tabs';
 import EditorTab from './EditorTab';
 import { Button, Tooltip } from '@blueprintjs/core';
-import React from 'react';
 
 import classes from 'src/styles/EditorTab.module.scss';
 

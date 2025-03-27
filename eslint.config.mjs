@@ -54,6 +54,7 @@ export default tseslint.config(
           argsIgnorePattern: '^_',
         },
       ],
+      '@typescript-eslint/prefer-promise-reject-errors': 'off',
       'import-x/no-useless-path-segments': ['error', { noUselessIndex: true }],
       'no-restricted-imports': [
         'error',

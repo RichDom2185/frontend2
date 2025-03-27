@@ -1,5 +1,5 @@
 import { Button, Card, Collapse } from '@blueprintjs/core';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import classes from 'src/styles/Sicp.module.scss';
 

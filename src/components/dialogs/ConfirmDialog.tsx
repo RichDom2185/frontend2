@@ -8,7 +8,6 @@ import {
   Intent,
 } from '@blueprintjs/core';
 import classNames from 'classnames';
-import React from 'react';
 
 export interface ConfirmDialogProps<T> {
   icon?: IconName;

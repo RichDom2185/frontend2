@@ -1,6 +1,5 @@
 import { Alignment, Button, Navbar } from '@blueprintjs/core';
 import { useParams } from 'react-router-dom';
-import React from 'react';
 
 type Props = {
   handleOpenToc?: () => void;

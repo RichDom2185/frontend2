@@ -2,7 +2,7 @@ import { PropsType } from './types';
 import { ConfirmDialog, ConfirmDialogProps } from 'src/components/dialogs/ConfirmDialog';
 import { PromptDialog, PromptDialogProps } from 'src/components/dialogs/PromptDialog';
 import { IconName, Intent } from '@blueprintjs/core';
-import React from 'react';
+import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 
 // The below is based off the Blueprint Toaster:
@@ -13,7 +13,7 @@ interface DialogHelperState {
   dialogOnClose: (() => void) | null;
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-types
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 class DialogHelper extends React.PureComponent<{}, DialogHelperState> {
   public state: DialogHelperState = {
     dialog: null,

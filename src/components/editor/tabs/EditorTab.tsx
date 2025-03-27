@@ -1,6 +1,5 @@
 import { Card, Icon } from '@blueprintjs/core';
 import classNames from 'classnames';
-import React from 'react';
 
 import classes from 'src/styles/EditorTab.module.scss';
 

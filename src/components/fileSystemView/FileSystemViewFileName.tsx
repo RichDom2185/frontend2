@@ -2,7 +2,7 @@ import { WorkspaceLocation } from 'src/types/store/workspaces';
 import { showSimpleErrorDialog } from 'src/utils/DialogHelper';
 import { FSModule } from 'browserfs/dist/node/core/FS';
 import path from 'path';
-import React from 'react';
+import { useState } from 'react';
 
 import classes from 'src/styles/FileSystemView.module.scss';
 
@@ -31,7 +31,7 @@ const FileSystemViewFileName: React.FC<FileSystemViewFileNameProps> = (
     refreshDirectory,
   } = props;
 
-  const [editedFileName, setEditedFileName] = React.useState<string>(fileName);
+  const [editedFileName, setEditedFileName] = useState<string>(fileName);
   // const dispatch = useDispatch();
 
   const handleInputOnChange = (e: React.ChangeEvent<HTMLInputElement>) =>

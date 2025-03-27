@@ -5,7 +5,7 @@ import SicpExercise from 'src/components/sicp/SicpExercise';
 import SicpLatex from 'src/components/sicp/SicpLatex';
 import { Blockquote, Code, H1, H2, H4, OL, Pre, UL } from '@blueprintjs/core';
 import { Link } from 'react-router-dom';
-import React from 'react';
+import { Fragment } from 'react';
 
 // Custom error class for errors when parsing JSON files.
 export class ParseJsonError extends Error {}
@@ -68,10 +68,10 @@ const handleEpigraph = (obj: JsonType, refs: RefType) => {
   const hasAttribution = author || title || date;
 
   const attribution = [];
-  attribution.push(<React.Fragment key="attribution">-</React.Fragment>);
+  attribution.push(<Fragment key="attribution">-</Fragment>);
 
   if (author) {
-    attribution.push(<React.Fragment key="author">{author}</React.Fragment>);
+    attribution.push(<Fragment key="author">{author}</Fragment>);
   }
 
   if (title) {
@@ -79,7 +79,7 @@ const handleEpigraph = (obj: JsonType, refs: RefType) => {
   }
 
   if (date) {
-    attribution.push(<React.Fragment key="date">{date}</React.Fragment>);
+    attribution.push(<Fragment key="date">{date}</Fragment>);
   }
 
   const text = child && parseArr(child, refs);
@@ -243,12 +243,12 @@ export const parseArr = (arr: Array<JsonType>, refs: RefType) => {
 export const parseObj = (obj: JsonType, index: number | undefined, refs: RefType) => {
   if (obj.tag) {
     if (processingFunctions[obj.tag]) {
-      return <React.Fragment key={index}>{processingFunctions[obj.tag](obj, refs)}</React.Fragment>;
+      return <Fragment key={index}>{processingFunctions[obj.tag](obj, refs)}</Fragment>;
     } else {
       throw new ParseJsonError('Unrecognised Tag: ' + obj.tag);
     }
   } else {
     // Handle case where tag does not exists. Should not happen if json file is created properly.
-    return <React.Fragment key={index}>{parseArr(obj.child!, refs)}</React.Fragment>;
+    return <Fragment key={index}>{parseArr(obj.child!, refs)}</Fragment>;
   }
 };

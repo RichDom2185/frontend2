@@ -7,7 +7,7 @@ import { Icon } from '@blueprintjs/core';
 import { IconNames } from '@blueprintjs/icons';
 import { FSModule } from 'browserfs/dist/node/core/FS';
 import path from 'path';
-import React from 'react';
+import { useState } from 'react';
 
 import classes from 'src/styles/FileSystemView.module.scss';
 
@@ -26,7 +26,7 @@ const FileSystemViewFileNode: React.FC<FileSystemViewFileNodeProps> = (
   const { workspaceLocation, fileSystem, basePath, fileName, indentationLevel, refreshDirectory } =
     props;
 
-  const [isEditing, setIsEditing] = React.useState<boolean>(false);
+  const [isEditing, setIsEditing] = useState<boolean>(false);
   // const dispatch = useDispatch();
 
   const fullPath = path.join(basePath, fileName);

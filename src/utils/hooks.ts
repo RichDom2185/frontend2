@@ -1,7 +1,6 @@
 import { AppDispatch, RootState } from '../store';
-import { TypedUseSelectorHook } from 'react-redux';
 // eslint-disable-next-line no-restricted-imports
-import { useDispatch, useSelector } from 'react-redux';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { useEffect, useState } from 'react';
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import classes from 'src/styles/FileSystemView.module.scss';
 
