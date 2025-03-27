@@ -1044,10 +1044,15 @@
     "@types/babel__core" "^7.20.5"
     react-refresh "^0.14.2"
 
-ace-builds@^1.32.8, ace-builds@^1.33.0:
+ace-builds@^1.33.0:
   version "1.39.0"
   resolved "https://registry.yarnpkg.com/ace-builds/-/ace-builds-1.39.0.tgz#c191ce9168ba60e51a0de3c51950066809e3c7ce"
   integrity sha512-MqoZojv4gpc5QyTMor/dS6kmruDV9db9LVZbCiT4qYz6WsDiv4qyG5f7ZPc+wjUl6oLMqgCAsBjo1whdSVyMlQ==
+
+ace-builds@^1.36.3:
+  version "1.39.1"
+  resolved "https://registry.yarnpkg.com/ace-builds/-/ace-builds-1.39.1.tgz#28af141e58fe1a0f945b98f56fe9f8aaa6245f73"
+  integrity sha512-HcJbBzx8qY66t9gZo/sQu7pi0wO/CFLdYn1LxQO1WQTfIkMfyc7LRnBpsp/oNCSSU/LL83jXHN1fqyOTuIhUjg==
 
 acorn-class-fields@^1.0.0:
   version "1.0.0"
@@ -2887,12 +2892,12 @@ queue-microtask@^1.2.2:
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-react-ace@^12.0.0:
-  version "12.0.0"
-  resolved "https://registry.yarnpkg.com/react-ace/-/react-ace-12.0.0.tgz#d40afc7382092109eead7227d9426f55dcc2209d"
-  integrity sha512-PstU6CSMfYIJknb4su2Fa0WgLXzq2ufQgR6fjcSWuGT1hGTHkBzuKw+SncV8PuLCdSJBJc1VehPhyeXlWByG/g==
+react-ace@^14.0.0:
+  version "14.0.1"
+  resolved "https://registry.yarnpkg.com/react-ace/-/react-ace-14.0.1.tgz#dba5761cee92a1e522be7e7dab7584df7e1aa1c7"
+  integrity sha512-z6YAZ20PNf/FqmYEic//G/UK6uw0rn21g58ASgHJHl9rfE4nITQLqthr9rHMVQK4ezwohJbp2dGrZpkq979PYQ==
   dependencies:
-    ace-builds "^1.32.8"
+    ace-builds "^1.36.3"
     diff-match-patch "^1.0.5"
     lodash.get "^4.4.2"
     lodash.isequal "^4.5.0"
