@@ -4,7 +4,7 @@ import SicpCodeSnippet from 'src/components/sicp/SicpCodeSnippet';
 import SicpExercise from 'src/components/sicp/SicpExercise';
 import SicpLatex from 'src/components/sicp/SicpLatex';
 import { Blockquote, Code, H1, H2, H4, OL, Pre, UL } from '@blueprintjs/core';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { Fragment } from 'react';
 
 // Custom error class for errors when parsing JSON files.

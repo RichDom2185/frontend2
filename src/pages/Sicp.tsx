@@ -8,7 +8,7 @@ import { useResponsive } from 'src/utils/hooks';
 import { parseArr } from 'src/utils/sicp';
 import { Classes, Drawer, Position } from '@blueprintjs/core';
 import classNames from 'classnames';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router';
 import { useEffect, useRef, useState } from 'react';
 
 import classes from 'src/styles/Sicp.module.scss';

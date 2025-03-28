@@ -1,6 +1,6 @@
 import { RefType } from 'src/utils/sicp';
 import { Icon } from '@blueprintjs/core';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 import classes from 'src/styles/Sicp.module.scss';
 

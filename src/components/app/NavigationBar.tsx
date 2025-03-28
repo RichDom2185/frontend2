@@ -1,7 +1,7 @@
 import Constants from 'src/utils/constants';
 import { Alignment, Button, Classes, Navbar } from '@blueprintjs/core';
 import classNames from 'classnames';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router';
 
 import classes from 'src/styles/NavigationBar.module.scss';
 
