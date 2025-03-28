@@ -19,7 +19,9 @@ const SicpAnchorLink: React.FC<Props> = ({ refs, id, children, top }) => {
           <Link
             className={classes['sicp-anchor-link']}
             style={{ top: top }}
-            ref={node => (refs.current[id] = node)}
+            ref={node => {
+              refs.current[id] = node;
+            }}
             to={id}
           >
             <Icon icon="link" />

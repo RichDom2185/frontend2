@@ -10,7 +10,7 @@ import { createPortal } from 'react-dom';
 import classes from 'src/styles/MobileControlBar.module.scss';
 
 type Props = {
-  portalRef: React.RefObject<HTMLElement>;
+  portalRef: React.RefObject<HTMLElement | null>;
   renderBottomSheet: (
     close: () => void,
     pinned: boolean,

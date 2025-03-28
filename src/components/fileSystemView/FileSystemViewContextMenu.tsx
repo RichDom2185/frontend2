@@ -6,7 +6,7 @@ import { useState } from 'react';
 import classes from 'src/styles/ContextMenu.module.scss';
 
 export type FileSystemViewContextMenuProps = {
-  children?: JSX.Element;
+  children?: React.ReactNode;
   className?: string;
   createNewFile?: () => void;
   createNewDirectory?: () => void;

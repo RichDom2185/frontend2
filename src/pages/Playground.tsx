@@ -26,14 +26,14 @@ const Playground: React.FC = () => {
   // Fix to calculate absolute height (in pixels)
   const sheetPanelRef = useRef<ImperativePanelHandle>(null);
   const bottomSheetRef = useRef<HTMLDivElement>(null);
-  const panelGroupRef = useRef<HTMLElement | null>();
+  const panelGroupRef = useRef<HTMLElement | null>(undefined);
   useEffect(() => {
     const groupElement = getPanelGroupElement('workspace-group');
     panelGroupRef.current = groupElement;
   }, []);
 
   // Fix for resizing to <= 3%
-  const resizeHeight = useRef<number>();
+  const resizeHeight = useRef<number>(undefined);
 
   return (
     <>

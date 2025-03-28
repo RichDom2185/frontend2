@@ -39,14 +39,18 @@ export type JsonType = {
   prependLength?: number;
 };
 
-export type RefType = React.MutableRefObject<Record<string, HTMLElement | null>>;
+export type RefType = React.RefObject<Record<string, HTMLElement | null>>;
 
 const handleFootnote = (obj: JsonType, refs: RefType) => {
   return (
     <>
       {obj.count === 1 && <hr />}
       <div className="sicp-footnote">
-        <div ref={ref => (refs.current[obj.id!] = ref)} />
+        <div
+          ref={ref => {
+            refs.current[obj.id!] = ref;
+          }}
+        />
         <a href={obj.href}>{'[' + obj.count + '] '}</a>
         {parseArr(obj.child!, refs)}
       </div>
@@ -56,7 +60,12 @@ const handleFootnote = (obj: JsonType, refs: RefType) => {
 
 const handleRef = (obj: JsonType, refs: RefType) => {
   return (
-    <Link ref={ref => (refs.current[obj.id!] = ref)} to={obj.href!}>
+    <Link
+      ref={ref => {
+        refs.current[obj.id!] = ref;
+      }}
+      to={obj.href!}
+    >
       {obj.body}
     </Link>
   );
@@ -184,7 +193,10 @@ const handleLatex = (math: string) => {
   return <SicpLatex math={math} />;
 };
 
-export const processingFunctions: Record<string, (obj: JsonType, refs: RefType) => JSX.Element> = {
+export const processingFunctions: Record<
+  string,
+  (obj: JsonType, refs: RefType) => React.ReactNode
+> = {
   '#text': (obj, _refs) => handleText(obj.body!),
   B: (obj, refs) => <b>{parseArr(obj.child!, refs)}</b>,
   BR: (_obj, _refs) => <br />,
@@ -194,7 +206,13 @@ export const processingFunctions: Record<string, (obj: JsonType, refs: RefType) 
   EXERCISE: handleExercise,
   FIGURE: handleFigure,
   FOOTNOTE_REF: (obj, refs) => (
-    <sup ref={ref => (refs.current[obj.id!] = ref)}>{handleRef(obj, refs)}</sup>
+    <sup
+      ref={ref => {
+        refs.current[obj.id!] = ref;
+      }}
+    >
+      {handleRef(obj, refs)}
+    </sup>
   ),
   JAVASCRIPTINLINE: (obj, _refs) => <Code>{obj.body}</Code>,
   LATEX: (obj, _refs) => handleLatex(obj.body!),
