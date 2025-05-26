@@ -1573,7 +1573,7 @@ debug@^3.2.7:
   dependencies:
     ms "^2.1.1"
 
-debug@^4.1.0, debug@^4.3.1, debug@^4.3.2, debug@^4.3.4, debug@^4.4.0, debug@^4.4.1:
+debug@^4.1.0, debug@^4.3.1, debug@^4.3.2, debug@^4.3.4, debug@^4.4.1:
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.4.1.tgz#e5a8bc6cbc4c6cd3e64308b0693a3d4fa550189b"
   integrity sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==
@@ -1836,6 +1836,14 @@ eslint-import-context@^0.1.4:
     get-tsconfig "^4.10.1"
     stable-hash "^0.0.5"
 
+eslint-import-context@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/eslint-import-context/-/eslint-import-context-0.1.5.tgz#ef1facb0f940e6aa85c9066983469e9b7a994dc8"
+  integrity sha512-jalO1mLiEvTv0io0koz1AE4LwkHQxDBFLaSXWweWtJR0y/NC1yyxvU61Z54bghIFNeM1M4TvwRwVRhLunQJ3gw==
+  dependencies:
+    get-tsconfig "^4.10.1"
+    stable-hash "^0.0.5"
+
 eslint-import-resolver-node@^0.3.9:
   version "0.3.9"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.9.tgz#d4eaac52b8a2e7c3cd1903eb00f7e053356118ac"
@@ -1846,16 +1854,17 @@ eslint-import-resolver-node@^0.3.9:
     resolve "^1.22.4"
 
 eslint-import-resolver-typescript@^4.3.1:
-  version "4.3.5"
-  resolved "https://registry.yarnpkg.com/eslint-import-resolver-typescript/-/eslint-import-resolver-typescript-4.3.5.tgz#81a7f1ab7f52d00980a2fe031e8d27aa095baf91"
-  integrity sha512-QGwhLrwn/WGOsdrWvjhm9n8BvKN/Wr41SQERMV7DQ2hm9+Ozas39CyQUxum///l2G2vefQVr7VbIaCFS5h9g5g==
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/eslint-import-resolver-typescript/-/eslint-import-resolver-typescript-4.4.1.tgz#3da41dcaa17ddfc520ad2d2d1e30b8ac4e137e8e"
+  integrity sha512-KHQnjMAn/Hbs1AcMs2YfJTeNoWsaOoMRvJUKr77Y2dv7jNOaT8/IJYlvfN/ZIwTxUsv2B6amwv7u9bt2Vl9lZg==
   dependencies:
-    debug "^4.4.0"
-    get-tsconfig "^4.10.0"
+    debug "^4.4.1"
+    eslint-import-context "^0.1.5"
+    get-tsconfig "^4.10.1"
     is-bun-module "^2.0.0"
     stable-hash "^0.0.5"
-    tinyglobby "^0.2.13"
-    unrs-resolver "^1.6.3"
+    tinyglobby "^0.2.14"
+    unrs-resolver "^1.7.2"
 
 eslint-plugin-import-x@^4.9.4:
   version "4.13.1"
@@ -2170,7 +2179,7 @@ get-symbol-description@^1.1.0:
     es-errors "^1.3.0"
     get-intrinsic "^1.2.6"
 
-get-tsconfig@^4.10.0, get-tsconfig@^4.10.1:
+get-tsconfig@^4.10.1:
   version "4.10.1"
   resolved "https://registry.yarnpkg.com/get-tsconfig/-/get-tsconfig-4.10.1.tgz#d34c1c01f47d65a606c37aa7a177bc3e56ab4b2e"
   integrity sha512-auHyJ4AgMz7vgS8Hp3N6HXSmlMdUyhSUrfBF16w153rxtLIEOE+HGqaBppczZvnHLqQJfiHotCYpNhl0lUROFQ==
@@ -3500,6 +3509,14 @@ tinyglobby@^0.2.13:
     fdir "^6.4.4"
     picomatch "^4.0.2"
 
+tinyglobby@^0.2.14:
+  version "0.2.14"
+  resolved "https://registry.yarnpkg.com/tinyglobby/-/tinyglobby-0.2.14.tgz#5280b0cf3f972b050e74ae88406c0a6a58f4079d"
+  integrity sha512-tX5e7OM1HnYr2+a2C/4V0htOcSQcoSTH9KgJnVvNm5zm/cyEWKJ7j7YutsH9CxMdtOkkLFy2AHrMci9IM8IPZQ==
+  dependencies:
+    fdir "^6.4.4"
+    picomatch "^4.0.2"
+
 to-regex-range@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/to-regex-range/-/to-regex-range-5.0.1.tgz#1648c44aae7c8d988a326018ed72f5b4dd0392e4"
@@ -3603,7 +3620,7 @@ undici-types@~6.19.2:
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.19.8.tgz#35111c9d1437ab83a7cdc0abae2f26d88eda0a02"
   integrity sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==
 
-unrs-resolver@^1.6.3, unrs-resolver@^1.7.2:
+unrs-resolver@^1.7.2:
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/unrs-resolver/-/unrs-resolver-1.7.2.tgz#a6844bcb9006020b58e718c5522a4f4552632b6b"
   integrity sha512-BBKpaylOW8KbHsu378Zky/dGh4ckT/4NW/0SHRABdqRLcQJ2dAOjDo9g97p04sWflm0kqPqpUatxReNV/dqI5A==
