@@ -1,0 +1,1 @@
+import{I as n}from"./index-BKzgFDAn.js";import{I as e}from"./index-BvSuWPlB.js";import{bm as t,I as s}from"./NavigationBar-B6Er49iT.js";import"./index-Fd7rrVa8.js";function p(o,a){var r=t(o);return a===s.STANDARD?n[r]:e[r]}function f(o){return t(o)}export{n as IconSvgPaths16,e as IconSvgPaths20,p as getIconPaths,f as iconNameToPathsRecordKey};
