@@ -18,7 +18,6 @@ const sourceSubLanguages: Array<Pick<LanguageConfig, 'chapter' | 'variant'>> = [
 
   { chapter: Chapter.SOURCE_3, variant: Variant.DEFAULT },
   { chapter: Chapter.SOURCE_3, variant: Variant.TYPED },
-  { chapter: Chapter.SOURCE_3, variant: Variant.CONCURRENT },
   { chapter: Chapter.SOURCE_3, variant: Variant.NATIVE },
 
   { chapter: Chapter.SOURCE_4, variant: Variant.DEFAULT },
@@ -33,9 +32,7 @@ export const sourceLanguages: LanguageConfig[] = sourceSubLanguages.map(sublang 
 
   // Local imports/exports require Source 2+ as Source 1 does not have lists.
   supportedFeatures.multiFile = chapter >= Chapter.SOURCE_2;
-
-  // Disable REPL for concurrent variants
-  supportedFeatures.repl = variant !== Variant.CONCURRENT;
+  supportedFeatures.repl = true;
 
   return {
     ...sublang,

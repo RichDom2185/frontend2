@@ -32,7 +32,6 @@ export const variantDisplay: Record<Variant, string> = {
   [Variant.DEFAULT]: '',
   [Variant.TYPED]: 'Typed',
   [Variant.WASM]: 'WebAssembly',
-  [Variant.CONCURRENT]: 'Concurrent',
   [Variant.NATIVE]: 'Native',
   [Variant.EXPLICIT_CONTROL]: 'Explicit-Control',
 };
