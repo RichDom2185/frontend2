@@ -1,13 +1,13 @@
-@import "src/styles/variables.scss";
+@use "src/styles/variables.scss" as vars;
 
 .mobile-control-bar {
-  border-top: 1px solid $dark-gray4;
+  border-top: 1px solid vars.$dark-gray4;
   height: 40px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: $dark-gray1;
+  background-color: vars.$dark-gray1;
   padding-inline: 6px;
   column-gap: 3px;
   z-index: 11;
@@ -29,7 +29,7 @@
 .bottom-sheet-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba($dark-gray1, 0.7);
+  background-color: rgba(vars.$dark-gray1, 0.7);
   z-index: 10;
 }
 

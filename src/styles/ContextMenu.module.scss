@@ -1,7 +1,7 @@
-@import "src/styles/variables.scss";
+@use "src/styles/variables.scss" as vars;
 
 .context-menu {
-  background-color: $cadet-color-1;
+  background-color: vars.$cadet-color-1;
   padding: 5px 1px;
   z-index: 5;
 }
@@ -13,6 +13,6 @@
   white-space: nowrap;
 
   &:hover {
-    background-color: $cadet-color-3;
+    background-color: vars.$cadet-color-3;
   }
 }

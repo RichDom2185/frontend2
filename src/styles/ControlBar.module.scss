@@ -1,12 +1,12 @@
-@import "src/styles/variables.scss";
+@use "src/styles/variables.scss" as vars;
 
 .control-bar {
-  border-top: 1px solid $dark-gray4;
+  border-top: 1px solid vars.$dark-gray4;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: $dark-gray2;
+  background-color: vars.$dark-gray2;
   padding-inline: 12px;
   column-gap: 6px;
 

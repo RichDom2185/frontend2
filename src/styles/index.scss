@@ -1,7 +1,23 @@
-@import "normalize.css";
+@use "normalize.css";
 
-@import "./variables.scss";
-@import "@blueprintjs/core/src/blueprint.scss";
+@use "./variables.scss" as vars;
+@use "@blueprintjs/core/src/blueprint.scss" with (
+  $pt-border-radius: vars.$pt-border-radius,
+
+  $dark-gray1: vars.$dark-gray1,
+  $dark-gray2: vars.$dark-gray2,
+  $dark-gray3: vars.$dark-gray3,
+  $dark-gray4: vars.$dark-gray4,
+  $dark-gray5: vars.$dark-gray5,
+
+  $light-gray1: vars.$light-gray1,
+  $light-gray2: vars.$light-gray2,
+  $light-gray3: vars.$light-gray3,
+  $light-gray4: vars.$light-gray4,
+  $light-gray5: vars.$light-gray5,
+
+  $white: vars.$white
+);
 
 @import "katex/dist/katex.min.css";
 

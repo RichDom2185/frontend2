@@ -1,4 +1,4 @@
-@import "src/styles/variables.scss";
+@use "src/styles/variables.scss" as vars;
 
 .file-system-view-container {
   width: 100%;
@@ -49,14 +49,14 @@
   padding: 2px 5px;
 
   &:hover {
-    background: $cadet-color-3;
+    background: vars.$cadet-color-3;
   }
 }
 
 .file-system-view-input {
   width: 100%;
   background: transparent;
-  border: thin solid $cadet-color-4;
+  border: thin solid vars.$cadet-color-4;
   padding: 0;
 }
 

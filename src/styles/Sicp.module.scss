@@ -1,4 +1,4 @@
-@import "src/styles/variables.scss";
+@use "src/styles/variables.scss" as vars;
 
 .sicp-container {
   height: 100%;
@@ -103,11 +103,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: $dark-gray4;
+  color: vars.$dark-gray4;
   transition: background-color 0.2s ease-in-out;
 
   &:hover {
-    background-color: $dark-gray4;
+    background-color: vars.$dark-gray4;
     color: #fff;
   }
 }

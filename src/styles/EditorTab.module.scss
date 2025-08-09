@@ -1,4 +1,4 @@
-@import "src/styles/variables.scss";
+@use "src/styles/variables.scss" as vars;
 
 .editor-tab-container {
   display: flex;
@@ -13,13 +13,13 @@
     height: 0;
   }
   padding: 6px;
-  background-color: $dark-gray4;
+  background-color: vars.$dark-gray4;
 }
 
 .editor-tab {
   padding: 5px 5px 5px 10px;
   // !important is necessary to override the default Card background-color property.
-  background-color: $cadet-color-1 !important;
+  background-color: vars.$cadet-color-1 !important;
   display: flex;
   flex-direction: row;
   column-gap: 4px;
@@ -28,12 +28,12 @@
 
   &:hover {
     // !important is necessary to override the default Card background-color property.
-    background-color: $cadet-color-3 !important;
+    background-color: vars.$cadet-color-3 !important;
   }
 
   &.selected {
     // !important is necessary to override the default Card background-color property.
-    background-color: $cadet-color-2 !important;
+    background-color: vars.$cadet-color-2 !important;
   }
 
   .remove-button {
