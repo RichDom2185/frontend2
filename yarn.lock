@@ -139,9 +139,9 @@
     "@babel/helper-plugin-utils" "^7.27.1"
 
 "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
-  version "7.27.6"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.27.6.tgz#ec4070a04d76bae8ddbb10770ba55714a417b7c6"
-  integrity sha512-vbavdySgbTTrmFE+EsiqUTzlOr5bzlnJtUv9PynGCAKvfQqjIXbvFdumPM/GxMDfyuGMJaJAU6TO4zc1Jf1i8Q==
+  version "7.28.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.28.3.tgz#75c5034b55ba868121668be5d5bb31cc64e6e61a"
+  integrity sha512-9uIQ10o0WGdpP6GDhXcdOJPJuDgFtIDtN/9+ArJQ2NAfAmiuhTQdzkaTGR33v43GYS2UrSA0eX2pPPHoFVvpxA==
 
 "@babel/template@^7.27.2":
   version "7.27.2"
@@ -173,20 +173,20 @@
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.27.1"
 
-"@blueprintjs/colors@^5.1.8":
-  version "5.1.8"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/colors/-/colors-5.1.8.tgz#241bed7d51f2e1fa216e9281ef1a362c27a36da2"
-  integrity sha512-rCl+NZwR6xjJeCB6yWglbqWU2zOdVgeI5unBASalzMXWpRO0UXIjx0pA/Vtii4cB2kIdk8PaHTlGmZnLTu/MSg==
+"@blueprintjs/colors@^5.1.9":
+  version "5.1.9"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/colors/-/colors-5.1.9.tgz#9b14e6181ac89b487c56a62b4cc82ce32cb33f8c"
+  integrity sha512-gk9nlb2tc1qBK/BpVHkC0KQSAmd9PnF60D0iCDEyyh1R/3UzwhTYUvw9Q0XMLfFInNeVAbfsIbko41BmLptAaA==
   dependencies:
     tslib "~2.6.2"
 
 "@blueprintjs/core@^6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/core/-/core-6.1.0.tgz#94d9cce06aa5f267339dbd8a09dff83216e95e4d"
-  integrity sha512-ltsZ9qJwn8TFOPAXA7/5aV8k+aSQX2WYamZPGTIUzXJO18RCO0NsnpPTfq36GiTxumKZjdT3W56iP2Q2n9gsOw==
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/core/-/core-6.2.1.tgz#18961a022d9d68d39fa8af3a375dd2a3d3786e72"
+  integrity sha512-y/cKHrNbcBa/HZY+j4nwS6jMJQ2FwTAlgp3xgxpIaN95HDzlnvc+0Pjuu8J4AlBSmP/kuQilmrzEPG9nnWWp1Q==
   dependencies:
-    "@blueprintjs/colors" "^5.1.8"
-    "@blueprintjs/icons" "^6.0.0"
+    "@blueprintjs/colors" "^5.1.9"
+    "@blueprintjs/icons" "^6.1.0"
     "@popperjs/core" "^2.11.8"
     classnames "^2.3.1"
     normalize.css "^8.0.1"
@@ -195,10 +195,10 @@
     tslib "~2.6.2"
     use-sync-external-store "^1.2.0"
 
-"@blueprintjs/icons@^6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/icons/-/icons-6.0.0.tgz#4ff69d75eebca96d42f6778a663bd655b8a4dd66"
-  integrity sha512-t8j+JAlNgrrhiI/QtehDPea/jY62wW3vIlsoqgezXfevnCuVXb1QQNOc2if46LYkUkFXWvD7rBZanLnXxBgB1g==
+"@blueprintjs/icons@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/icons/-/icons-6.1.0.tgz#6213027f7517fdd305ec6b5a61f8879aca8569a5"
+  integrity sha512-FvARNeJGvQPwewtKBB/8jYAj1xQFXFf34/SSdpDxZGhAeEf98NdUHilsel3M2wT/FPNWJCKhDHSND4sDgpMr+A==
   dependencies:
     change-case "^4.1.2"
     classnames "^2.3.1"
