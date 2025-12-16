@@ -1,1 +1,0 @@
-import{aH as e}from"./index-CROugqvs.js";import{a3 as s,I as _}from"./NavigationBar-DW0KNNZg.js";const c=async(o,r)=>{const i=s(o);let t;return r===_.STANDARD?t=await e(()=>import("./index-voJy5fZe.js").then(a=>a.I),[]):t=await e(()=>import("./index-BZITDwoa.js").then(a=>a.I),[]),t[i]};export{c as splitPathsBySizeLoader};
