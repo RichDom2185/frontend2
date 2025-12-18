@@ -172,20 +172,20 @@
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.28.5"
 
-"@blueprintjs/colors@^5.1.11":
-  version "5.1.11"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/colors/-/colors-5.1.11.tgz#f0e6d3fd0688ba386504984048fe57ac33894b80"
-  integrity sha512-nSmsgfORb1bYxW4FiMBmFuPPqBK0IbLn1M0hqQCZQ+3hkMJKyQIypBCsw44o4KrpJXbWdS7y2I/p40ZWubYHXw==
+"@blueprintjs/colors@^5.1.12":
+  version "5.1.12"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/colors/-/colors-5.1.12.tgz#32e0ac178d7aaf9fc42967d05746bbfa47783194"
+  integrity sha512-7GQWUQ82eLE1te++DC8fRO2B31bsSwia82NLamZfKgjHY9V4zxafMT1DK5gKlmmy0nCjpdcCc+df4aVZMHGLww==
   dependencies:
     tslib "~2.6.2"
 
 "@blueprintjs/core@^6.1.0":
-  version "6.3.4"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/core/-/core-6.3.4.tgz#611e58f0538002f95b733b6eca248c72feb0206f"
-  integrity sha512-z3YOtqBhMgvdT6twZK0jhB8VTtYa02QNP0LCwW3+J2jZaDjftgk72DoSdIvQtKU6l89AMS0WULClEBrnLRpMfA==
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/core/-/core-6.4.1.tgz#ca04e4e8a5965fb2615fdd9a996539236d8aa5a7"
+  integrity sha512-JSA8seGiZ2dpmugO7Cea4bh0XEkTioDyzM1Z/0piFsziVv4OeV3jrmMXMegtCdHqpwpWYj8reGuPzFKHGemXXw==
   dependencies:
-    "@blueprintjs/colors" "^5.1.11"
-    "@blueprintjs/icons" "^6.3.1"
+    "@blueprintjs/colors" "^5.1.12"
+    "@blueprintjs/icons" "^6.3.2"
     "@popperjs/core" "^2.11.8"
     classnames "^2.3.1"
     normalize.css "^8.0.1"
@@ -194,10 +194,10 @@
     tslib "~2.6.2"
     use-sync-external-store "^1.2.0"
 
-"@blueprintjs/icons@^6.3.1":
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/icons/-/icons-6.3.1.tgz#425e36f36fde291a0403c4bb79b17de1a358d3ef"
-  integrity sha512-jq7bsOu6WT7hMl/PtCuTUwV3OOjQoPehnaiRxpLaMktWLzi9ELFhL6diV6j1hc2qP/spA45AqUof61F6GHt7gg==
+"@blueprintjs/icons@^6.3.2":
+  version "6.3.2"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/icons/-/icons-6.3.2.tgz#574e3b78850d95984328c9aa638a9ce06d5a124b"
+  integrity sha512-rOdSg7yPmjtqy3e+wD66tXCrzt57M59htVOikwunTaCyQ61+bsF0PyqLfNlhsw1mXqZm8uxSINs1bhnwXhQCiw==
   dependencies:
     change-case "^4.1.2"
     classnames "^2.3.1"
@@ -1590,12 +1590,7 @@ css-mediaquery@^0.1.2:
   resolved "https://registry.yarnpkg.com/css-mediaquery/-/css-mediaquery-0.1.2.tgz#6a2c37344928618631c54bd33cedd301da18bea0"
   integrity sha512-COtn4EROW5dBGlE/4PiKnh6rZpAPxDeFLaEEwt4i10jpDMFt2EhQGS79QmmrO+iKCHv0PU/HrOWEhijFd1x99Q==
 
-csstype@^3.0.2:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.2.1.tgz#d19b5c2b584e8f57361e7129e160a75aba418e40"
-  integrity sha512-98XGutrXoh75MlgLihlNxAGbUuFQc7l1cqcnEZlLNKc0UrVdPndgmaDmYTDDh929VS/eqTZV0rozmhu2qqT1/g==
-
-csstype@^3.2.2:
+csstype@^3.0.2, csstype@^3.2.2:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.2.3.tgz#ec48c0f3e993e50648c86da559e2610995cf989a"
   integrity sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==
