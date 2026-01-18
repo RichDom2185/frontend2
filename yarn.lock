@@ -180,12 +180,12 @@
     tslib "~2.6.2"
 
 "@blueprintjs/core@^6.1.0":
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/core/-/core-6.5.0.tgz#ac4dba27cf761e3d701e7ea2c7709fd32d7b4f84"
-  integrity sha512-6GmER7/UdaRibKkmTc5yz7se9Rpc1cnauU2jfwg1UXYhqK/pgfpzKT+KB9UM+cda1qexcjkXYA/N46i+C8xFfA==
+  version "6.6.1"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/core/-/core-6.6.1.tgz#85eb4e598298c29e61f25540eda5339b39acfbd4"
+  integrity sha512-FEQ27LccWvCelF29lbrG5k6hAH5elWDmT9BTQHVYY+VWAEBIfwZOvJp2Aotxku9TfSXirCrhDPuFLX/Krp6wrw==
   dependencies:
     "@blueprintjs/colors" "^5.1.12"
-    "@blueprintjs/icons" "^6.4.0"
+    "@blueprintjs/icons" "^6.5.0"
     "@popperjs/core" "^2.11.8"
     classnames "^2.3.1"
     normalize.css "^8.0.1"
@@ -194,10 +194,10 @@
     tslib "~2.6.2"
     use-sync-external-store "^1.2.0"
 
-"@blueprintjs/icons@^6.4.0":
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/icons/-/icons-6.4.0.tgz#91bad3589ab1480677e5aeff839f5593e4e58363"
-  integrity sha512-8THDnE4Cz6V0DGNX0tQys6IiIYyKKvmMBZHHiFviBsdkduUqle096UdD+1XROa2dcwmGYSjvMQ/wKqYowCJINQ==
+"@blueprintjs/icons@^6.5.0":
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/icons/-/icons-6.5.0.tgz#c1726e8837690f8b75129c285e1fc6af092b2425"
+  integrity sha512-id1Ls88KkkxSNQ11b7NrJqoYm35SbN2Le57Ue7BFE3VRbANYC5L5J4B29xmjNn+uV8YoNlQoVLWk35xAAwN6Hg==
   dependencies:
     change-case "^4.1.2"
     classnames "^2.3.1"
