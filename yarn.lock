@@ -172,20 +172,20 @@
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.28.5"
 
-"@blueprintjs/colors@^5.1.12":
-  version "5.1.12"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/colors/-/colors-5.1.12.tgz#32e0ac178d7aaf9fc42967d05746bbfa47783194"
-  integrity sha512-7GQWUQ82eLE1te++DC8fRO2B31bsSwia82NLamZfKgjHY9V4zxafMT1DK5gKlmmy0nCjpdcCc+df4aVZMHGLww==
+"@blueprintjs/colors@^5.1.13":
+  version "5.1.13"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/colors/-/colors-5.1.13.tgz#556b5a96183c1a83ce0376b0733bbc1e062209dc"
+  integrity sha512-iDS9z95cAHkwDoOAu9owomUPHUsdxYd5SgoVzGImH0t9oEyyqx+QjVqI9fUQ+zTUJHtep36X2xKmjMJqWYwwUg==
   dependencies:
     tslib "~2.6.2"
 
 "@blueprintjs/core@^6.1.0":
-  version "6.6.1"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/core/-/core-6.6.1.tgz#85eb4e598298c29e61f25540eda5339b39acfbd4"
-  integrity sha512-FEQ27LccWvCelF29lbrG5k6hAH5elWDmT9BTQHVYY+VWAEBIfwZOvJp2Aotxku9TfSXirCrhDPuFLX/Krp6wrw==
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/core/-/core-6.7.0.tgz#c8b62d89577e53c341b51c7bced8f338831ec1ea"
+  integrity sha512-nvwTzmy6ot6f9vStK9Xe9LLyycCqU48rY0yjpkYEcKFmXGSgckJSpaqsHfhN6EPdzSue+B6iykR9gOxd2yHXgg==
   dependencies:
-    "@blueprintjs/colors" "^5.1.12"
-    "@blueprintjs/icons" "^6.5.0"
+    "@blueprintjs/colors" "^5.1.13"
+    "@blueprintjs/icons" "^6.5.1"
     "@popperjs/core" "^2.11.8"
     classnames "^2.3.1"
     normalize.css "^8.0.1"
@@ -194,10 +194,10 @@
     tslib "~2.6.2"
     use-sync-external-store "^1.2.0"
 
-"@blueprintjs/icons@^6.5.0":
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/icons/-/icons-6.5.0.tgz#c1726e8837690f8b75129c285e1fc6af092b2425"
-  integrity sha512-id1Ls88KkkxSNQ11b7NrJqoYm35SbN2Le57Ue7BFE3VRbANYC5L5J4B29xmjNn+uV8YoNlQoVLWk35xAAwN6Hg==
+"@blueprintjs/icons@^6.5.1":
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/icons/-/icons-6.5.1.tgz#92eeee0465dfbbf69d07ef2236c0bf2b80f57e8c"
+  integrity sha512-+yu/hPdk0WLfNFJnc6waUm1rmXEbG6wAFOhOoXhvrGOr+3YGht8Zhwc+VNl8JNrer24EVB6U8NOHaOYjPEePcQ==
   dependencies:
     change-case "^4.1.2"
     classnames "^2.3.1"
