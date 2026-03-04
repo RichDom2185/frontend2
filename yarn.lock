@@ -1011,9 +1011,9 @@
   integrity sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==
 
 "@types/node@^24.2.1":
-  version "24.10.14"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.10.14.tgz#374550a07e24c9e4e604ceadfaddec4dd60faa90"
-  integrity sha512-OowOUbD1lBCOFIPOZ8xnMIhgqA4sCutMiYOmPHL1PTLt5+y1XA+g2+yC9OOyz8p+deMZqPZLxfMjYIfrKsPeFg==
+  version "24.11.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.11.0.tgz#34e8f9603ada03fdc36a532faefdb8e1bb3693a0"
+  integrity sha512-fPxQqz4VTgPI/IQ+lj9r0h+fDR66bzoeMGHp8ASee+32OSGIkeASsoZuJixsQoVef1QJbeubcPBxKk22QVoWdw==
   dependencies:
     undici-types "~7.16.0"
 
