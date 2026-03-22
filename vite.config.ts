@@ -7,6 +7,10 @@ const ignoreSvgIcon = () => new sass.SassString('');
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  legacy: {
+    // Needed for react-ace in Vite 8
+    inconsistentCjsInterop: true,
+  },
   resolve: {
     alias: {
       fs: 'browserfs',
