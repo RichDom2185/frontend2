@@ -1,7 +1,7 @@
 import { LanguageConfig, LanguageGroup } from 'src/types/languages';
 import { allLanguages } from 'src/utils/languages';
 import { Button, Menu, MenuItem, Popover, Tooltip } from '@blueprintjs/core';
-import { Variant } from 'js-slang/dist/types';
+import { Variant } from 'js-slang/dist/langs';
 import { useCallback, useMemo, useState } from 'react';
 
 type Props = {

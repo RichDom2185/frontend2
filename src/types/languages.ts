@@ -1,4 +1,4 @@
-import { Language as SourceLanguage, Variant } from 'js-slang/dist/types';
+import { Language as SourceLanguage, Variant } from 'js-slang/dist/langs';
 
 export enum LanguageGroup {
   JAVASCRIPT = 'JavaScript',

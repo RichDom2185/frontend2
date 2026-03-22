@@ -1,5 +1,5 @@
 import { LanguageConfig, LanguageGroup } from '../../types/languages';
-import { Chapter, Variant } from 'js-slang/dist/types';
+import { Chapter, Variant } from 'js-slang/dist/langs';
 
 const pySubLanguages: Array<Pick<LanguageConfig, 'chapter' | 'variant' | 'displayName'>> = [
   { chapter: Chapter.PYTHON_1, variant: Variant.DEFAULT, displayName: 'Python \xa71' },

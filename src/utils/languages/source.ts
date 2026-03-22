@@ -4,7 +4,7 @@ import {
   LanguageGroup,
   variantDisplay,
 } from '../../types/languages';
-import { Chapter, Variant } from 'js-slang/dist/types';
+import { Chapter, Variant } from 'js-slang/dist/langs';
 
 const sourceSubLanguages: Array<Pick<LanguageConfig, 'chapter' | 'variant'>> = [
   { chapter: Chapter.SOURCE_1, variant: Variant.DEFAULT },
