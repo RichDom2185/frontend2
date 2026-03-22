@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/paths-CKRsv3dt.js","assets/chunk-DECur_0Z.js","assets/paths-DTWyfBPH.js"])))=>i.map(i=>d[i]);
+import{t as e}from"./preload-helper-Bl9q33Ev.js";import{n as t,t as n}from"./iconTypes-mA9DF8iM.js";var r=async(r,i)=>{let a=t(r),o;return o=i===n.STANDARD?await e(()=>import(`./paths-CKRsv3dt.js`),__vite__mapDeps([0,1])):await e(()=>import(`./paths-DTWyfBPH.js`),__vite__mapDeps([2,1])),o[a]};export{r as splitPathsBySizeLoader};
