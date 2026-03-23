@@ -12,10 +12,10 @@ export default defineConfig({
     inconsistentCjsInterop: true,
   },
   resolve: {
+    tsconfigPaths: true,
     alias: {
       fs: 'browserfs',
       path: 'path-browserify',
-      src: '/src',
     },
   },
   css: {
