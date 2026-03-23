@@ -5,14 +5,8 @@ import MobileControlBar from 'src/components/controlBar/MobileControlBar';
 import { useResponsive } from 'src/utils/hooks';
 import { Button, Card, Classes } from '@blueprintjs/core';
 import classNames from 'classnames';
-import {
-  getPanelGroupElement,
-  ImperativePanelHandle,
-  Panel,
-  PanelGroup,
-  PanelResizeHandle,
-} from 'react-resizable-panels';
-import { useEffect, useRef, useState } from 'react';
+import { Group, Panel, Separator, useGroupRef, usePanelRef } from 'react-resizable-panels';
+import { useRef, useState } from 'react';
 
 import classes from 'src/styles/Playground.module.scss';
 
@@ -24,13 +18,9 @@ const Playground: React.FC = () => {
   const pinnedBottomSheetRef = useRef<HTMLDivElement>(null);
 
   // Fix to calculate absolute height (in pixels)
-  const sheetPanelRef = useRef<ImperativePanelHandle>(null);
+  const sheetPanelRef = usePanelRef();
   const bottomSheetRef = useRef<HTMLDivElement>(null);
-  const panelGroupRef = useRef<HTMLElement | null>(undefined);
-  useEffect(() => {
-    const groupElement = getPanelGroupElement('workspace-group');
-    panelGroupRef.current = groupElement;
-  }, []);
+  const panelGroupRef = useGroupRef();
 
   // Fix for resizing to <= 3%
   const resizeHeight = useRef<number>(undefined);
@@ -41,17 +31,17 @@ const Playground: React.FC = () => {
       {!isMobileBreakpoint && (
         <ControlBar defaultFolderMode={folderMode} handleFolderModeChange={setFolderMode} />
       )}
-      <PanelGroup direction="vertical" id="workspace-group">
-        <Panel>
+      <Group orientation="vertical" groupRef={panelGroupRef}>
+        <Panel id="workspace">
           <Editor multiFile={folderMode} />
         </Panel>
-        <Panel ref={sheetPanelRef} defaultSize={0}>
-          <PanelResizeHandle
+        <Panel panelRef={sheetPanelRef} defaultSize={0}>
+          <Separator
             className={classes['mobile-side-content-resize-handle']}
             style={{ height: barHeight }}
-            onDragging={dragging => {
+            onDragEnd={() => {
               // Only resize if final size is <= 3%
-              if (dragging || (sheetPanelRef.current?.getSize() ?? 0) > 3) {
+              if ((sheetPanelRef.current?.getSize().asPercentage ?? 0) > 3) {
                 return;
               }
               sheetPanelRef.current?.resize(resizeHeight.current!);
@@ -59,7 +49,7 @@ const Playground: React.FC = () => {
           />
           <div className={classes['mobile-side-content-container']} ref={pinnedBottomSheetRef} />
         </Panel>
-      </PanelGroup>
+      </Group>
       {isMobileBreakpoint && (
         <MobileControlBar
           portalRef={pinnedBottomSheetRef}
@@ -83,7 +73,7 @@ const Playground: React.FC = () => {
                     } else {
                       // unpinned -> pinned
                       const sheetHeight = bottomSheetRef.current?.clientHeight;
-                      const panelHeight = panelGroupRef.current?.clientHeight;
+                      const panelHeight = panelGroupRef.current?.getLayout()['workspace'];
                       resizeHeight.current = ((sheetHeight! + barHeight) / panelHeight!) * 100;
                       sheetPanelRef.current?.resize(resizeHeight.current);
                     }

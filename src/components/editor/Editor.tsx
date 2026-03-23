@@ -9,12 +9,7 @@ import { RootState } from 'src/store';
 import { EditorFile } from 'src/types/editor';
 import { Classes } from '@blueprintjs/core';
 import AceEditor from 'react-ace';
-import {
-  ImperativePanelHandle,
-  Panel,
-  PanelGroup,
-  PanelResizeHandle,
-} from 'react-resizable-panels';
+import { Group, Panel, Separator, usePanelRef } from 'react-resizable-panels';
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 export type ImperativeEditor = {
@@ -38,14 +33,14 @@ const EditorComponent: React.ForwardRefRenderFunction<ImperativeEditor, Props> =
     getCode: () => ref.current?.editor?.getValue() ?? '',
   }));
 
-  const fileExplorerRef = useRef<ImperativePanelHandle>(null);
+  const fileExplorerRef = usePanelRef();
   const [resizeFocused, setResizeFocused] = useState(false);
 
   useEffect(() => {
     if (!multiFile) {
       fileExplorerRef.current?.collapse();
     }
-  }, [multiFile]);
+  }, [fileExplorerRef, multiFile]);
 
   useEffect(() => {
     if (fileExplorerOpen) {
@@ -53,24 +48,29 @@ const EditorComponent: React.ForwardRefRenderFunction<ImperativeEditor, Props> =
     } else {
       fileExplorerRef.current?.collapse();
     }
-  }, [fileExplorerOpen]);
+  }, [fileExplorerOpen, fileExplorerRef]);
 
   return (
-    <PanelGroup direction="horizontal">
+    <Group orientation="horizontal">
       <Panel
-        ref={fileExplorerRef}
+        panelRef={fileExplorerRef}
         collapsedSize={0}
         collapsible
-        minSize={5}
-        defaultSize={25}
-        maxSize={50}
-        onCollapse={() => setFileExplorerOpen(false)}
+        minSize="5%"
+        defaultSize="25%"
+        maxSize="50%"
+        onResize={size => {
+          if (size.asPercentage === 0) {
+            setFileExplorerOpen(false);
+          }
+        }}
       >
         <FileSystemView workspaceLocation="playground" basePath="/playground" />
       </Panel>
       {(fileExplorerOpen || resizeFocused) && (
-        <PanelResizeHandle
-          onDragging={setResizeFocused}
+        <Separator
+          onDragStart={() => setResizeFocused(true)}
+          onDragEnd={() => setResizeFocused(false)}
           style={{ width: 8, backgroundColor: 'black' }}
         />
       )}
@@ -98,7 +98,7 @@ const EditorComponent: React.ForwardRefRenderFunction<ImperativeEditor, Props> =
           onChange={setCode}
         />
       </Panel>
-    </PanelGroup>
+    </Group>
   );
 };
 
