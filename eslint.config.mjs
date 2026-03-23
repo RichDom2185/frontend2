@@ -3,7 +3,7 @@ import eslint from '@eslint/js';
 import importPlugin from 'eslint-plugin-import-x';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
+import { reactRefresh } from 'eslint-plugin-react-refresh';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import tseslint from 'typescript-eslint';
 
@@ -30,7 +30,7 @@ export default tseslint.config(
   {
     files: ['**/*.{ts,tsx}'],
     plugins: {
-      'react-refresh': reactRefresh,
+      'react-refresh': reactRefresh.plugin,
       'simple-import-sort': simpleImportSort,
     },
     rules: {
