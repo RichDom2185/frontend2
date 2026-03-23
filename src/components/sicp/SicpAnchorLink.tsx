@@ -20,6 +20,8 @@ const SicpAnchorLink: React.FC<Props> = ({ refs, id, children, top }) => {
             className={classes['sicp-anchor-link']}
             style={{ top: top }}
             ref={node => {
+              // TODO: Investigate validity of React Hooks v7 warning
+              // eslint-disable-next-line react-hooks/immutability
               refs.current[id] = node;
             }}
             to={id}

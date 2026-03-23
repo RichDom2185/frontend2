@@ -21,19 +21,19 @@ const defaultStyles: React.CSSProperties = {
   maxWidth: '100vw',
 };
 
+const getLatestStyles = (): React.CSSProperties => {
+  return {
+    maxHeight: window.visualViewport?.height ?? defaultStyles.maxHeight,
+    maxWidth: window.visualViewport?.width ?? defaultStyles.maxWidth,
+  };
+};
+
 // Adapted from https://gist.github.com/ptb/9ace4534d67393683bf7191370a16089
 export const useDetectKeyboard = () => {
-  const [styles, setStyles] = useState<React.CSSProperties>(defaultStyles);
-
-  const updateViewport = () => {
-    setStyles({
-      maxHeight: window.visualViewport?.height ?? defaultStyles.maxHeight,
-      maxWidth: window.visualViewport?.width ?? defaultStyles.maxWidth,
-    });
-  };
+  const [styles, setStyles] = useState<React.CSSProperties>(getLatestStyles());
 
   useEffect(() => {
-    updateViewport();
+    const updateViewport = () => setStyles(getLatestStyles());
     window.visualViewport?.addEventListener('resize', updateViewport);
     return () => {
       window.visualViewport?.removeEventListener('resize', updateViewport);

@@ -53,8 +53,12 @@ const MobileControlBar: React.FC<Props> = ({ portalRef, renderBottomSheet }) => 
     },
     currentTabIndex
   );
+
+  // TODO: Investigate validity of React Hooks v7 warning
+  // eslint-disable-next-line react-hooks/refs
   const portal = portalRef.current
-    ? createPortal(pinMobileBottomSheet && bottomSheet, portalRef.current)
+    ? // eslint-disable-next-line react-hooks/refs
+      createPortal(pinMobileBottomSheet && bottomSheet, portalRef.current)
     : null;
 
   const controlBar = (

@@ -2,8 +2,10 @@ import { ConfirmDialog, ConfirmDialogProps } from './ConfirmDialog';
 import { InputGroup, Intent } from '@blueprintjs/core';
 import { useEffect, useRef, useState } from 'react';
 
-export interface PromptDialogProps<T>
-  extends Omit<ConfirmDialogProps<T>, 'onResponse' | 'choices'> {
+export interface PromptDialogProps<T> extends Omit<
+  ConfirmDialogProps<T>,
+  'onResponse' | 'choices'
+> {
   defaultValue?: string;
   enterResponse?: T;
   onResponse: (buttonResponse: T, value: string) => void;
@@ -24,6 +26,8 @@ export function PromptDialog<T>(
       return;
     }
 
+    // TODO: Investigate validity of React Hooks v7 warning
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsValid(!validationFunction || validationFunction(inputRef.current.value));
   }, [validationFunction]);
 
