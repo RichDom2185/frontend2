@@ -26,15 +26,14 @@ export default tseslint.config(
   },
   { settings: { react: { version: 'detect' } } },
   react.configs.flat.recommended,
+  reactHooks.configs.flat['recommended-latest'],
   {
     files: ['**/*.{ts,tsx}'],
     plugins: {
-      'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       'simple-import-sort': simpleImportSort,
     },
     rules: {
-      ...reactHooks.configs.recommended.rules,
       'react/prop-types': 'off',
       // With the new JSX Transform in React 17,
       // we don't need to import React in every file.
