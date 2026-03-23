@@ -1,14 +1,17 @@
+// eslint-disable-next-line simple-import-sort/imports
 import 'ace-builds/src-noconflict/ace';
 import 'ace-builds/src-noconflict/ext-language_tools';
 import 'ace-builds/src-noconflict/mode-javascript';
 import 'ace-builds/src-noconflict/theme-twilight';
+
+// https://github.com/vitejs/vite/issues/21990
+import AceEditor from 'react-ace';
 
 import FileSystemView from '../fileSystemView/FileSystemView';
 import EditorTabContainer from './tabs/EditorTabContainer';
 import { RootState } from 'src/store';
 import { EditorFile } from 'src/types/editor';
 import { Classes } from '@blueprintjs/core';
-import AceEditor from 'react-ace';
 import { Group, Panel, Separator, usePanelRef } from 'react-resizable-panels';
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 
