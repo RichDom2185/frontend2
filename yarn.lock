@@ -154,9 +154,9 @@
     tslib "~2.6.2"
 
 "@blueprintjs/core@^6.1.0":
-  version "6.13.0"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/core/-/core-6.13.0.tgz#ef5075a620c4cb45c8c67ccb77b4fedaca3ac811"
-  integrity sha512-2gKXoe7ve0X1zSK0Svqmp6rwrLXvvN1QghByVHksTuTXwBisJahBgzcbeG8h9eg7VAXbUXYE1vvlUlQdn8LWvw==
+  version "6.15.0"
+  resolved "https://registry.yarnpkg.com/@blueprintjs/core/-/core-6.15.0.tgz#ef675296dc32465fe7f4239e659cc5d96a9d6fdc"
+  integrity sha512-g0CcgoZltOHd142EJfLkLpsgQ5/JjFaJmMkTclef1Z5bZUrkJl8pLS8GZfjdhLp/ZGWqFUZRXvKV2jEnbd/W1Q==
   dependencies:
     "@blueprintjs/colors" "^5.1.16"
     "@blueprintjs/icons" "^6.10.0"
