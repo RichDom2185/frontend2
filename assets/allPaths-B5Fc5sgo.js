@@ -1,1 +1,0 @@
-import{C as e,S as t}from"./NavigationBar-Db2yELUD.js";import{t as n}from"./paths-CxzgQRGz.js";import{t as r}from"./paths-EQzcH-oy.js";function i(i,a){let o=e(i);return a===t.STANDARD?n[o]:r[o]}export{i as getIconPaths};
