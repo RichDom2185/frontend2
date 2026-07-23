@@ -1,2 +1,0 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/paths-DXNge39R.js","assets/rolldown-runtime-QTnfLwEv.js","assets/paths-DTbcUNMK.js"])))=>i.map(i=>d[i]);
-import{C as e,S as t}from"./NavigationBar-BdAGwZ19.js";import{wn as n}from"./index-sRAnLQps.js";var r=async(r,i)=>{let a=e(r),o;return o=i===t.STANDARD?await n(()=>import(`./paths-DXNge39R.js`),__vite__mapDeps([0,1])):await n(()=>import(`./paths-DTbcUNMK.js`),__vite__mapDeps([2,1])),o[a]};export{r as splitPathsBySizeLoader};
