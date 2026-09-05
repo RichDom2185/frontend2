@@ -2022,6 +2022,11 @@ fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
   integrity sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
 
+fast-equals@^5.3.3:
+  version "5.4.2"
+  resolved "https://registry.yarnpkg.com/fast-equals/-/fast-equals-5.4.2.tgz#8a40888e7bd2465420461ed83336e89ca6c77c49"
+  integrity sha512-Ywe6jodPTWOTL9/k0bV7gdfP8twKL5Y8I8CZ933fAY5gBekICZSUQTbyH6ut2NZCNyB05mSUwAuEqdEIaOOlDQ==
+
 fast-glob@^3.2.12:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.3.3.tgz#d06d585ce8dba90a16b0505c543c3ccfb3aeb818"
@@ -2719,16 +2724,6 @@ locate-path@^6.0.0:
   dependencies:
     p-locate "^5.0.0"
 
-lodash.get@^4.4.2:
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
-  integrity sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==
-
-lodash.isequal@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
-  integrity sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==
-
 lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
@@ -3090,14 +3085,13 @@ queue-microtask@^1.2.2:
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
 react-ace@^14.0.1:
-  version "14.0.1"
-  resolved "https://registry.yarnpkg.com/react-ace/-/react-ace-14.0.1.tgz#dba5761cee92a1e522be7e7dab7584df7e1aa1c7"
-  integrity sha512-z6YAZ20PNf/FqmYEic//G/UK6uw0rn21g58ASgHJHl9rfE4nITQLqthr9rHMVQK4ezwohJbp2dGrZpkq979PYQ==
+  version "14.1.0"
+  resolved "https://registry.yarnpkg.com/react-ace/-/react-ace-14.1.0.tgz#2b0ee87ec98d6934514adddf8e682071f890a500"
+  integrity sha512-H+Tuw1oa3uP6zRoLBOayPVaMy5Le4G33OpEmLOfSVks75ajmrmFGbyWWEHfBYLCCpu5KfyFlod9jCEUc7i5ekw==
   dependencies:
     ace-builds "^1.36.3"
     diff-match-patch "^1.0.5"
-    lodash.get "^4.4.2"
-    lodash.isequal "^4.5.0"
+    fast-equals "^5.3.3"
     prop-types "^15.8.1"
 
 react-dom@^19.0.0:
